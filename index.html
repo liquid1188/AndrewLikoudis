@@ -974,8 +974,8 @@
             document.querySelectorAll('.section-container, .featured-articles, .services-preview-grid, .about-grid, .credentials-grid, .experience-timeline, .gallery-grid, .books-edited-grid, .writing-grid, .endorser-grid').forEach(el => {
                 if (!el.closest('.hero')) el.classList.add('reveal');
             });
-            // Add reveal to page-level CTA sections
-            document.querySelectorAll('.contact-cta-section > div, .affiliations > *, .page-hero-content').forEach(el => {
+            // Add reveal to page-level CTA sections (exclude contact-cta-section > div — renders in-viewport, observer won't fire)
+            document.querySelectorAll('.affiliations > *, .page-hero-content').forEach(el => {
                 el.classList.add('reveal');
             });
             
