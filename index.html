@@ -974,7 +974,9 @@
             document.querySelectorAll('.section-container, .featured-articles, .services-preview-grid, .about-grid, .credentials-grid, .experience-timeline, .gallery-grid, .books-edited-grid, .writing-grid, .endorser-grid').forEach(el => {
                 if (!el.closest('.hero')) el.classList.add('reveal');
             });
-            // Add reveal to page-level CTA sections (exclude contact-cta-section > div — renders in-viewport, observer won't fire)
+            // Add reveal to page-level CTA sections
+            // Note: contact-cta-section > div intentionally excluded — it renders at bottom of viewport
+            // and the IntersectionObserver threshold causes it to stay opacity:0 permanently
             document.querySelectorAll('.affiliations > *, .page-hero-content').forEach(el => {
                 el.classList.add('reveal');
             });
