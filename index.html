@@ -21,7 +21,7 @@
     <style>
         :root{--ivory:#FAF8F5;--cream:#F5F1EA;--gold:#C9A962;--gold-dark:#A68A4B;--burgundy:#722F37;--burgundy-deep:#5A252C;--navy:#1E2A3A;--charcoal:#2C2C2C;--text:#3A3A3A;--text-light:#666}
         *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Libre Baskerville',serif;background:var(--ivory);color:var(--text);line-height:1.8;font-size:16px}
-        .page{display:none}.page.active{display:block}
+        .page{display:none}.page.active{display:block;overflow-x:hidden}
         nav{position:fixed;top:0;left:0;right:0;background:rgba(250,248,245,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,169,98,.2);z-index:1000;padding:.9rem 0}
         .nav-container{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center}
         .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--burgundy);text-decoration:none;cursor:pointer}
@@ -86,7 +86,7 @@
         .affiliations{background:var(--burgundy);padding:2rem 1.5rem;text-align:center}
         .affiliations-title{font-family:'Lato',sans-serif;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
         .affiliations-list{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem 2rem;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:rgba(255,255,255,.8)}
-        .contact-cta-section{background:var(--navy);text-align:center;padding:3.5rem 1.5rem}
+        .contact-cta-section{background:var(--navy);text-align:center;padding:3.5rem 1.5rem;overflow:hidden}
         .contact-cta-content h2{font-family:'Cormorant Garamond',serif;font-size:2rem;color:#fff;margin-bottom:.5rem}
         .contact-cta-content p{color:rgba(255,255,255,.7);margin-bottom:1.25rem;font-size:.95rem}
         .contact-quick-links{display:flex;justify-content:center;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap}
@@ -970,8 +970,8 @@
 
         // Mark sections for reveal on load
         document.addEventListener('DOMContentLoaded', () => {
-            // Add reveal class to major content sections (skip heroes)
-            document.querySelectorAll('.section-container, .featured-articles, .services-preview-grid, .about-grid, .credentials-grid, .experience-timeline, .gallery-grid, .books-edited-grid, .writing-grid, .endorser-grid').forEach(el => {
+            // Add reveal class to targeted content sections (skip heroes and large containers)
+            document.querySelectorAll('.featured-articles, .services-preview-grid, .about-grid, .credentials-grid, .experience-timeline, .gallery-grid, .books-edited-grid, .writing-grid, .endorser-grid').forEach(el => {
                 if (!el.closest('.hero')) el.classList.add('reveal');
             });
             // Add reveal to page-level CTA sections
