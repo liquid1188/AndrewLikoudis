@@ -57,6 +57,11 @@ a{color:#be9b55;text-decoration:none;}
 .speaker-fig{text-align:center;}
 .speaker-fig img{width:100%;border-radius:4px;aspect-ratio:3/4;object-fit:cover;object-position:top;}
 .speaker-cap{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.1em;color:#8a7a5e;text-transform:uppercase;margin:6px 0 0;line-height:1.4;}
+@media print{
+  html,body{height:auto;overflow:visible;}
+  .wrap{max-width:100%;page-break-inside:avoid;}
+  *{page-break-inside:avoid;page-break-after:avoid;page-break-before:avoid;}
+}
 @media(max-width:560px){.body,.closing,.hero,.header,.fellows,.cta{padding-left:24px;padding-right:24px;}.grid{grid-template-columns:1fr;}.hero h1{font-size:30px;}.speaker-grid{grid-template-columns:1fr;}}
 </style></head><body>
 <div class="wrap">
