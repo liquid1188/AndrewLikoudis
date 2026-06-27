@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Not Found — Andrew Likoudis</title>
-<link rel="canonical" href="https://andrewlikoudis.com/" />
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#1a2332;--gold:#b8860b;--text:#2c2c2c;--bg:#faf9f7}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
-h1{font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--navy);margin-bottom:.5rem}
-p{font-size:1rem;color:#666;margin-bottom:1.5rem;max-width:400px;line-height:1.6}
-a{display:inline-block;background:var(--navy);color:#fff;padding:.7rem 1.75rem;border-radius:4px;text-decoration:none;font-size:.85rem;letter-spacing:.03em;transition:background .2s}
-a:hover{background:var(--gold)}
-.code{font-family:'Cormorant Garamond',serif;font-size:6rem;font-weight:600;color:var(--gold);line-height:1;margin-bottom:.5rem}
-</style>
+<meta charset="utf-8">
+<title>Andrew Likoudis</title>
+<script>
+  // SPA redirect for GitHub Pages: encode the path into a query and bounce to index.
+  var l = window.location;
+  l.replace(
+    l.protocol + '//' + l.host + '/?/' +
+    l.pathname.slice(1).split('/').join('/').replace(/&/g, '~and~') +
+    (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+    l.hash
+  );
+</script>
 </head>
-<body>
-<div class="code">404</div>
-<h1>Page Not Found</h1>
-<p>The page you're looking for doesn't exist or has been moved.</p>
-<a href="/">Return Home</a>
-</body>
+<body></body>
 </html>
