@@ -30,6 +30,9 @@
         .nav-links a::after{content:'';position:absolute;bottom:-4px;left:50%;width:0;height:1.5px;background:var(--gold);transition:all .3s;transform:translateX(-50%)}
         .nav-links a:hover::after,.nav-links a.active::after{width:100%}
         .nav-links a:hover,.nav-links a.active{color:var(--burgundy)}
+.nav-links a.wwm-cta,.nav-links a.wwm-cta.active{background:var(--burgundy);color:var(--ivory)!important;padding:.5rem 1.05rem;border-radius:4px;transition:transform .25s,box-shadow .25s}
+.nav-links a.wwm-cta:hover{transform:translateY(-2px);box-shadow:0 10px 22px -10px rgba(114,47,55,.5)}
+.nav-links a.wwm-cta::after{display:none!important}
         .hamburger{display:none;flex-direction:column;cursor:pointer;gap:5px;padding:5px}
         .hamburger span{width:25px;height:2px;background:var(--burgundy);transition:all .3s}
         .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -465,7 +468,7 @@
 <script>(function(l){if(l.search[1]==='/'){var d=l.search.slice(1).split('&').map(function(x){return x.replace(/~and~/g,'&')}).join('?');history.replaceState(null,null,l.pathname.slice(0,-1)+d+l.hash)}}(window.location))</script>
 </head>
 <body>
-    <nav><div class="nav-container"><a href="javascript:void(0)" class="nav-logo" onclick="showPage('home')">Andrew Likoudis</a><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div><ul class="nav-links" id="nav-menu"><li><a href="javascript:void(0)" onclick="showPage('about');closeMenu()" id="nav-about">About</a></li><li><a href="javascript:void(0)" onclick="showPage('book');closeMenu()" id="nav-book">Faith in Crisis</a></li><li><a href="javascript:void(0)" onclick="showPage('writing');closeMenu()" id="nav-writing">Writing</a></li><li><a href="javascript:void(0)" onclick="showPage('speaking');closeMenu()" id="nav-speaking">Speaking</a></li><li><a href="javascript:void(0)" onclick="showPage('work-with-me');closeMenu()" id="nav-work-with-me">Work With Me</a></li></ul></div></nav>
+    <nav><div class="nav-container"><a href="javascript:void(0)" class="nav-logo" onclick="showPage('home')">Andrew Likoudis</a><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div><ul class="nav-links" id="nav-menu"><li><a href="javascript:void(0)" onclick="showPage('about');closeMenu()" id="nav-about">About</a></li><li><a href="javascript:void(0)" onclick="showPage('book');closeMenu()" id="nav-book">Faith in Crisis</a></li><li><a href="javascript:void(0)" onclick="showPage('writing');closeMenu()" id="nav-writing">Writing</a></li><li><a href="javascript:void(0)" onclick="showPage('speaking');closeMenu()" id="nav-speaking">Speaking</a></li><li><a href="javascript:void(0)" class="wwm-cta" onclick="showPage('work-with-me');closeMenu()" id="nav-work-with-me">Work With Me</a></li></ul></div></nav>
 
     <!-- HOME -->
     <div id="page-home" class="page active">
