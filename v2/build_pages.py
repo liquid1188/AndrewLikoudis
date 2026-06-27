@@ -369,4 +369,83 @@ fic_body = f'''
 '''
 page("faith-in-crisis.html", "Faith in Crisis — Andrew Likoudis", "A 40-chapter response to Catholic traditionalism, Church authority, and reform, featuring Robert Cardinal Sarah, with an imprimatur from Archbishop Lori.", fic_body)
 
+# ---------------- GALLERY ----------------
+gallery = [
+ ("gallery-cardinal-pierre.jpg","Cardinal Christophe Pierre","Apostolic Nuncio to the United States"),
+ ("gallery-cardinal-sarah.jpg","Cardinal Robert Sarah","Prefect Emeritus, Dicastery for Divine Worship"),
+ ("gallery-imprimatur.jpg","Official Imprimatur","Archbishop William E. Lori · July 2025"),
+ ("gallery-cardinal-roche.jpg","Cardinal Arthur Roche","Prefect, Dicastery for Divine Worship — Baltimore Basilica"),
+ ("gallery-jack-figel.jpg","Jack Figel","Orientale Lumen Foundation · USCCB"),
+ ("gallery-jason-shanks.jpg","Jason Shanks","President, National Eucharistic Congress"),
+ ("gallery-mike-lewis-usccb.jpg","Reporting with Mike Lewis","USCCB Fall Assembly"),
+ ("gallery-pierre-dinner.jpg","Mike Lewis &amp; Cardinal Pierre","Private dinner, Maryland"),
+ ("gallery-press-club.jpg","National Press Club","EWTN"),
+ ("gallery-ewtn.jpg","EWTN Office","Washington, DC"),
+ ("gallery-michael-knowles.jpg","Michael Knowles","Catholic University of America"),
+ ("gallery-ted-cruz.jpg","Senator Ted Cruz","Catholic University of America"),
+ ("gallery-goldman-sachs.jpg","Goldman Sachs 10KSB Summit","Washington, DC"),
+ ("gallery-larry-chapp.jpg","Theologian Larry Chapp","Baltimore Basilica"),
+ ("gallery-barron-2022a.jpg","Bishop Robert Barron","2022"),
+ ("gallery-barron-2023.jpg","Bishop Robert Barron","2023"),
+ ("gallery-barron-2022b.jpg","Bishop Robert Barron","2024"),
+ ("gallery-sister-imelda.jpg","Sister Imelda Joy",""),
+ ("gallery-alice-hildebrand.jpg","Alice von Hildebrand","New Rochelle, NY, 2021"),
+ ("gallery-james-likoudis.jpg","James Likoudis","With The Divine Primacy"),
+ ("gallery-ruth-funeral.jpg","Tom Nash, Dr. Robert Fastiggi &amp; James Likoudis","Ruth Likoudis Funeral"),
+ ("gallery-likoudis-jpii-teresa.jpg","James &amp; Ruth Likoudis","With Pope John Paul II &amp; Mother Teresa"),
+ ("gallery-james-mother-angelica.jpg","James Likoudis","Mother Angelica Live · EWTN"),
+ ("gallery-byzantine-schism-title.jpg","Ending the Byzantine Greek Schism","Edited by Andrew Likoudis · Foreword by Scott Hahn"),
+ ("gallery-mike-ordination.jpg","Fr. Michael Likoudis","Ordination Day"),
+ ("gallery-fic-flyer.jpg","Faith in Crisis","Book Launch Flyer"),
+ ("gallery-isabel-brown.jpg","Isabel Brown","March for Life, 2023"),
+ ("gallery-thomas-mckenna.jpg","Thomas McKenna","La Tavola, Baltimore"),
+ ("gallery-basilica-christmas.jpg","Baltimore Basilica","Christmas Eve Mass"),
+ ("gallery-usccb-coakley.jpg","Archbishop Paul Coakley","USCCB President"),
+ ("gallery-guadalupe-radio.jpg","Guadalupe Radio","EWTN Affiliate Studio, Washington, DC"),
+ ("gallery-white-house-interns.jpg","White House Interns","With Toby Capion &amp; Fr. John Paul Mary, EWTN"),
+ ("gallery-white-house-podium.jpg","White House Press Briefing Room","Washington, DC"),
+ ("gallery-bull-run-winery.jpg","DC Social Collective","Bull Run Winery, Virginia"),
+ ("gallery-andrew-klavan.jpg","Andrew Klavan","Daily Wire — National Press Club, DC"),
+ ("gallery-college-fix-gala.jpg","The College Fix Gala","Keynote: Bret Baier — National Press Club, DC"),
+ ("gallery-chess.jpg","Chess","A favorite pastime"),
+ ("gallery-reading.jpg","Reading with scotch",""),
+ ("gallery-gracian-reading.jpg","The Art of Worldly Wisdom","Baltasar Gracián"),
+]
+tiles=""
+for img,cap,sub in gallery:
+    subhtml=f'<span>{sub}</span>' if sub else ''
+    tiles+=f'<figure class="gallery-item" data-src="{IMG}/{img}" data-cap="{cap}" data-sub="{sub}"><img src="{IMG}/{img}" alt="{cap}" loading="lazy"><figcaption class="gallery-cap"><b>{cap}</b>{subhtml}</figcaption></figure>'
+gallery_body = f'''
+<section class="page-hero">
+  <span class="eyebrow">Gallery</span>
+  <h1>Encounters &amp; archives</h1>
+  <p>Three generations of one family's work in the Church — and the people met along the way. Tap any photo to enlarge.</p>
+</section>
+<section>
+  <div class="gallery-grid">{tiles}</div>
+</section>
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <img id="lbImg" src="" alt="">
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+<script>
+(function(){{
+  var lb=document.getElementById('lightbox'),img=document.getElementById('lbImg'),cap=document.getElementById('lbCap');
+  document.querySelectorAll('.gallery-item').forEach(function(el){{
+    el.addEventListener('click',function(){{
+      img.src=el.dataset.src;img.alt=el.dataset.cap;
+      cap.innerHTML='<b>'+el.dataset.cap+'</b>'+(el.dataset.sub?'<span>'+el.dataset.sub+'</span>':'');
+      lb.classList.add('open');
+    }});
+  }});
+  function close(){{lb.classList.remove('open');img.src='';}}
+  lb.addEventListener('click',function(e){{if(e.target!==img)close();}});
+  document.getElementById('lbClose').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){{if(e.key==='Escape')close();}});
+}})();
+</script>
+'''
+page("gallery.html", "Gallery — Andrew Likoudis", "Photographs from Andrew Likoudis's work in the Church — encounters with cardinals, bishops, and scholars, and the Likoudis family archive.", gallery_body)
+
 print("done")
