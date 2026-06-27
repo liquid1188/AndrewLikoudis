@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /preview.html
 Sitemap: https://andrewlikoudis.com/sitemap.xml
