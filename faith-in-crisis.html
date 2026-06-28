@@ -955,8 +955,8 @@ function requestTalk(theme){
 </script>
 <script>
 let currentSlide=0;const slides=document.querySelectorAll('.carousel-slide'),dots=document.querySelectorAll('.carousel-dot');
-function goToSlide(n){slides[currentSlide].classList.remove('active');dots[currentSlide].classList.remove('active');currentSlide=n;slides[currentSlide].classList.add('active');dots[currentSlide].classList.add('active')}
-setInterval(()=>{goToSlide((currentSlide+1)%slides.length)},10000);
+function goToSlide(n){if(!slides.length)return;if(slides[currentSlide])slides[currentSlide].classList.remove('active');if(dots[currentSlide])dots[currentSlide].classList.remove('active');currentSlide=((n%slides.length)+slides.length)%slides.length;if(slides[currentSlide])slides[currentSlide].classList.add('active');if(dots[currentSlide])dots[currentSlide].classList.add('active');}
+if(slides.length>1)setInterval(()=>{goToSlide((currentSlide+1)%slides.length)},10000);
 </script>
 <!-- Preorder Popup: Ending the Byzantine Greek Schism, 3rd ed. -->
 <div id="preorderPopup" style="display:none;position:fixed;inset:0;background:rgba(28,28,32,.78);backdrop-filter:blur(6px);z-index:9999;align-items:center;justify-content:center;padding:1rem;animation:fadeIn .35s ease-out">
