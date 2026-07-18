@@ -258,28 +258,9 @@
 
 <script>
 function requestTalk(theme){
-  // Decode any HTML entities in the theme (e.g. &amp; → &) before placing into form fields
   var ta = document.createElement('textarea');
   ta.innerHTML = theme;
-  var decodedTheme = ta.value;
-
-  var sel = document.querySelector('select[name="engagement_type"]');
-  if (sel){
-    for (var i=0; i<sel.options.length; i++){
-      if (sel.options[i].text === 'Speaking / Keynote'){ sel.selectedIndex = i; break; }
-    }
-  }
-  var desc = document.querySelector('textarea[name="project_description"]');
-  if (desc && !desc.value.trim()){
-    desc.value = 'Interested in the talk: "' + decodedTheme + '". \n\nEvent / venue: \nAudience: \nDate(s) under consideration: ';
-  }
-  var target = document.getElementById('inquiry');
-  if (target) target.scrollIntoView({behavior:'smooth'});
-  // Focus the first empty field after the scroll completes so the user can type immediately
-  setTimeout(function(){
-    var name = document.querySelector('input[name="name"]');
-    if (name && !name.value) name.focus();
-  }, 700);
+  window.location.href = '/work-with-me?talk=' + encodeURIComponent(ta.value) + '#inquiry';
 }
 </script>
 <script>
