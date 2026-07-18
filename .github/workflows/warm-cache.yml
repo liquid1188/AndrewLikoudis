@@ -1,22 +1,20 @@
 name: Warm CDN cache after deploy
 
 on:
-  workflow_run:
-    workflows: ["pages build and deployment"]
-    types: [completed]
+  deployment_status:
 
 jobs:
   warm:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.deployment_status.state == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Warm every deployed asset
         run: |
-          sleep 30  # let the deploy propagate to the CDN edge
+          sleep 20  # let the CDN edge settle
           DOMAIN="$(cat CNAME)"
           git ls-files | grep -Ei '\.(html|css|js|jpe?g|png|svg|webp|ico)$' > /tmp/files
-          echo "" >> /tmp/files   # root
+          echo "" >> /tmp/files
           total=0; warmed=0
           while read -r f; do
             total=$((total+1))
