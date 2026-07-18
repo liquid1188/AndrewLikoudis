@@ -515,3 +515,8 @@ nav{top:var(--strip-h);background:rgba(250,248,245,.85);backdrop-filter:blur(12p
 .floating-wwm:hover{background:var(--burgundy-deep);transform:translateY(-2px)}
 .floating-wwm.hidden{opacity:0;pointer-events:none;transform:translateY(16px)}
 @media(max-width:680px){.floating-wwm{bottom:78px;right:16px;font-size:.66rem;padding:.75rem 1.15rem}}
+
+/* Byzantine blue closing band — work-with-me */
+.inquiry-byz{background:linear-gradient(160deg,#102540,#1B3A5C);position:relative;overflow:hidden}
+.inquiry-byz::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 20%,rgba(201,169,98,.13),transparent 50%),radial-gradient(circle at 12% 80%,rgba(201,169,98,.07),transparent 45%);pointer-events:none}
+.inquiry-byz>.section-container{position:relative}
