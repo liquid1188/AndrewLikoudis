@@ -483,6 +483,16 @@ nav{top:var(--strip-h);background:rgba(250,248,245,.85);backdrop-filter:blur(12p
 
 .reading-single{max-width:620px;margin:2rem auto 0}
 .reading-single .reading-list li{text-align:center;font-size:1rem;padding:.85rem 0}
+.reading-shelf{max-width:880px;margin:2.5rem auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:2.25rem 2rem;align-items:start}
+.reading-book{display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:var(--text)}
+.reading-cover{display:block;width:100%;max-width:160px;position:relative;border-radius:3px;box-shadow:0 6px 18px -6px rgba(30,42,58,.28),0 1px 3px rgba(30,42,58,.15);transition:transform .3s ease,box-shadow .3s ease;background:#fff}
+.reading-cover::after{content:'';position:absolute;inset:0;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(201,169,98,.25),inset 3px 0 6px -3px rgba(0,0,0,.22)}
+.reading-cover img{display:block;width:100%;height:auto;border-radius:3px}
+.reading-book:hover .reading-cover{transform:translateY(-6px);box-shadow:0 16px 30px -10px rgba(30,42,58,.38),0 2px 6px rgba(30,42,58,.18)}
+.reading-book-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:1.05rem;line-height:1.3;color:var(--burgundy);margin-top:1rem;transition:color .25s}
+.reading-book:hover .reading-book-title{color:var(--gold-dark)}
+.reading-book-author{font-family:'Lato',sans-serif;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-light);margin-top:.35rem}
+@media(max-width:800px){.reading-shelf{grid-template-columns:repeat(2,1fr);gap:2rem 1.5rem;max-width:420px}.reading-cover{max-width:140px}}
 
 /* Reading list links */
 .reading-list a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--gold);transition:color .25s,border-color .25s}
