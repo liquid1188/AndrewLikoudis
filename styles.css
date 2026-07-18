@@ -221,8 +221,8 @@
         .foundation-bar-tagline{font-family:'Lato',sans-serif;font-size:.7rem;color:rgba(255,255,255,.8);letter-spacing:.03em}
         .foundation-bar-btn{font-family:'Lato',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--burgundy);background:#fff;padding:.6rem 1.25rem;border-radius:4px;text-decoration:none;transition:all .3s ease}
         .foundation-bar-btn:hover{background:var(--gold);color:#fff;transform:translateY(-2px)}
-        .gallery-grid{columns:3;column-gap:1.75rem}
-        .gallery-item{position:relative;text-align:center;overflow:hidden;border-radius:8px;box-shadow:0 4px 20px -5px rgba(0,0,0,.12);background:#fff;break-inside:avoid;margin-bottom:1.75rem}.gallery-item img{width:100%;height:auto;display:block;transition:transform .4s ease}.gallery-item:hover img{transform:scale(1.05)}
+        .gallery-grid{columns:3;column-gap:1.25rem}
+        .gallery-item{position:relative;text-align:center;overflow:hidden;border-radius:8px;box-shadow:0 4px 20px -5px rgba(0,0,0,.12);background:#fff;break-inside:avoid;margin-bottom:1.25rem}.gallery-item img{width:100%;height:auto;display:block;transition:transform .4s ease}.gallery-item:hover img{transform:scale(1.05)}
         .gallery-caption{font-family:'Lato',sans-serif;font-size:.75rem;color:var(--text-light);text-align:center;padding:.75rem 1rem;background:#fff;line-height:1.5;border-top:2px solid var(--gold)}
         .gallery-caption strong{color:var(--text);font-weight:700;font-size:.8rem;display:block;margin-bottom:.15rem}
         .gallery-caption .caption-context{display:block;font-size:.68rem;color:var(--text-light);margin-top:.1rem;font-style:italic}
