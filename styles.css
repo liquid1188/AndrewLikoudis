@@ -520,6 +520,6 @@ nav{top:var(--strip-h);background:rgba(250,248,245,.85);backdrop-filter:blur(12p
 .inquiry-byz::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 20%,rgba(201,169,98,.13),transparent 50%),radial-gradient(circle at 12% 80%,rgba(201,169,98,.07),transparent 45%);pointer-events:none}
 .inquiry-byz>.section-container{position:relative}
 
-/* Consulting preview: 4 cards */
-.services-preview-grid{grid-template-columns:repeat(4,1fr)}
-@media(max-width:1000px){.services-preview-grid{grid-template-columns:repeat(2,1fr)}}
+/* Consulting preview: 3 cards, single column on small screens */
+.services-preview-grid{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.services-preview-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
