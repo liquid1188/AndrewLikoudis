@@ -333,7 +333,6 @@
           .section-container{overflow-x:hidden}
           section{padding-left:1rem !important;padding-right:1rem !important}
         }
-        .back-to-top{position:fixed;bottom:2rem;right:2rem;width:40px;height:40px;border-radius:50%;background:var(--burgundy);color:#fff;border:none;cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s;z-index:999;box-shadow:0 4px 12px rgba(0,0,0,.2)}.back-to-top.visible{opacity:1;visibility:visible}.back-to-top:hover{background:var(--gold-dark);transform:translateY(-2px)}
         .endorser-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
         .endorser-card{background:#fff;padding:1.5rem 1.25rem;border-radius:8px;border-top:3px solid var(--gold);box-shadow:0 8px 25px -8px rgba(0,0,0,.1);display:flex;flex-direction:column;align-items:center;text-align:center}
         .endorser-card.featured{grid-column:span 3;flex-direction:row;text-align:left;align-items:flex-start;gap:1.25rem;border-top:none;border-left:4px solid var(--gold)}
@@ -511,10 +510,10 @@ nav{top:var(--strip-h);background:rgba(250,248,245,.85);backdrop-filter:blur(12p
   .announce-strip .strip-extra,.announce-strip .strip-ed{display:none}
 }
 /* Floating Work With Me CTA */
-.floating-wwm{position:fixed;bottom:88px;right:22px;z-index:990;background:var(--burgundy);color:var(--ivory);font-family:'Lato',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:.85rem 1.4rem;border-radius:999px;box-shadow:0 10px 28px -8px rgba(114,47,55,.55);transition:opacity .4s,transform .3s,background .3s;opacity:1}
+.floating-wwm{position:fixed;bottom:22px;right:22px;z-index:990;background:var(--burgundy);color:var(--ivory);font-family:'Lato',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:.85rem 1.4rem;border-radius:999px;box-shadow:0 10px 28px -8px rgba(114,47,55,.55);transition:opacity .4s,transform .3s,background .3s;opacity:1}
 .floating-wwm:hover{background:var(--burgundy-deep);transform:translateY(-2px)}
 .floating-wwm.hidden{opacity:0;pointer-events:none;transform:translateY(16px)}
-@media(max-width:680px){.floating-wwm{bottom:78px;right:16px;font-size:.66rem;padding:.75rem 1.15rem}}
+@media(max-width:680px){.floating-wwm{bottom:16px;right:16px;font-size:.66rem;padding:.75rem 1.15rem}}
 
 /* Byzantine blue closing band — work-with-me */
 .inquiry-byz{background:linear-gradient(160deg,#102540,#1B3A5C);position:relative;overflow:hidden}

@@ -493,11 +493,7 @@
             })();
         });
     </script>
-<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
-<script>
-const btt=document.getElementById('backToTop');
-window.addEventListener('scroll',()=>{btt.classList.toggle('visible',window.scrollY>400)});
-</script>
+
 <script>
 function requestTalk(theme){
   // Decode any HTML entities in the theme (e.g. &amp; → &) before placing into form fields
