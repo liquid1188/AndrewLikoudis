@@ -40,14 +40,12 @@
       '<button class="al-s-close" aria-label="Close search">&times;</button>' +
       '<input type="search" class="al-s-input" placeholder="Search books, articles, talks…" ' +
         'autocomplete="off" spellcheck="false">' +
-      '<div class="al-s-hint">Searches every book, article, talk and page.</div>' +
       '<div class="al-s-results" aria-live="polite"></div>' +
     '</div>';
   document.body.appendChild(ov);
 
   var input = ov.querySelector('.al-s-input'),
       out   = ov.querySelector('.al-s-results'),
-      hint  = ov.querySelector('.al-s-hint'),
       INDEX = null, loading = null, timer;
 
   function load() {
@@ -109,7 +107,7 @@
   function close() {
     ov.classList.remove('open');
     document.body.style.overflow = '';
-    input.value = ''; out.innerHTML = ''; hint.style.display = '';
+    input.value = ''; out.innerHTML = '';
   }
 
   btn.addEventListener('click', open);
@@ -127,7 +125,6 @@
   input.addEventListener('input', function () {
     var q = this.value.trim().toLowerCase();
     clearTimeout(timer);
-    hint.style.display = q ? 'none' : '';
     if (!q) { out.innerHTML = ''; return; }
     timer = setTimeout(function () {
       if (INDEX) render(q); else { render(q); load().then(function () { render(q); }); }

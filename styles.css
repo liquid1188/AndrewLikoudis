@@ -549,7 +549,6 @@ nav{top:var(--strip-h);background:rgba(250,248,245,.85);backdrop-filter:blur(12p
 .al-s-input{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(201,169,98,.5);color:var(--charcoal);font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,3.5vw,2.1rem);font-weight:400;padding:.5rem 0 .8rem;outline:none}
 .al-s-input::placeholder{color:var(--text-light);opacity:.5}
 .al-s-input:focus{border-bottom-color:var(--gold)}
-.al-s-hint{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-light);opacity:.7;margin-top:.9rem}
 .al-s-count{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dark);margin:1.6rem 0 .6rem}
 .al-s-empty{font-size:.88rem;color:var(--text-light);margin-top:1.6rem}
 .al-s-results{padding-bottom:4rem}
