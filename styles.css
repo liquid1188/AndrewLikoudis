@@ -535,11 +535,9 @@ nav{top:var(--strip-h);background:rgba(250,248,245,.85);backdrop-filter:blur(12p
 @media(max-width:900px){.services-preview-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
 
 /* ─── SITE SEARCH ─── */
-.nav-search-btn{order:3;margin-left:1.1rem;background:none;border:none;padding:4px;cursor:pointer;color:var(--text-light);opacity:.8;display:flex;align-items:center;transition:opacity .2s,color .2s}
+.nav-search-li{display:flex;align-items:center}
+.nav-search-btn{background:none;border:none;padding:4px;cursor:pointer;color:var(--text-light);opacity:.8;display:flex;align-items:center;transition:opacity .2s,color .2s}
 .nav-search-btn:hover{opacity:1;color:var(--burgundy)}
-.nav-container > .nav-logo{order:1}
-.nav-container > .nav-links{order:2}
-.nav-container > .hamburger{order:4}
 
 #al-search-overlay{position:fixed;inset:0;z-index:9998;display:none;background:rgba(250,248,245,.97);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:8vh 1.5rem 3rem;overflow-y:auto}
 #al-search-overlay.open{display:block}
@@ -561,5 +559,6 @@ nav{top:var(--strip-h);background:rgba(250,248,245,.85);backdrop-filter:blur(12p
 @media(max-width:700px){
   #al-search-overlay{padding-top:6vh}
   .al-s-close{top:-2.6rem}
-  .nav-search-btn{margin-left:auto;margin-right:.85rem}
+  .nav-search-li{justify-content:flex-start}
+  .nav-search-btn{padding:.55rem 0}
 }

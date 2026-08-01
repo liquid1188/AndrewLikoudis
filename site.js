@@ -16,22 +16,27 @@
    The nav is repeated on every page, so the control is injected here rather
    than hand-added to each one. Index is fetched lazily on first open. */
 (function () {
-  var nav = document.querySelector('.nav-container');
-  if (!nav || document.getElementById('al-search-overlay')) return;
+  var links = document.querySelector('.nav-links');
+  if (!links || document.getElementById('al-search-overlay')) return;
 
   var LABEL = {book: 'Book', article: 'Article', talk: 'Appearance',
                page: 'Page', section: 'Section'};
 
-  var btn = document.createElement('button');
-  btn.className = 'nav-search-btn';
-  btn.type = 'button';
-  btn.setAttribute('aria-label', 'Search this site');
-  btn.title = 'Search';
-  btn.innerHTML = '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" ' +
+  // Goes inside the menu list, not beside it. As a sibling of .nav-links it
+  // became a third flex child of a space-between container, which pushed the
+  // whole menu ~200px toward the centre.
+  var li = document.createElement('li');
+  li.className = 'nav-search-li';
+  li.innerHTML = '<button class="nav-search-btn" type="button" ' +
+    'aria-label="Search this site" title="Search">' +
+    '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" ' +
     'stroke="currentColor" stroke-width="1.8" stroke-linecap="round">' +
     '<circle cx="11" cy="11" r="7"></circle>' +
-    '<line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>';
-  nav.appendChild(btn);
+    '<line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg></button>';
+  var cta = links.querySelector('.wwm-cta');
+  if (cta && cta.parentNode) links.insertBefore(li, cta.parentNode);
+  else links.appendChild(li);
+  var btn = li.querySelector('.nav-search-btn');
 
   var ov = document.createElement('div');
   ov.id = 'al-search-overlay';
