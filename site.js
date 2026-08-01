@@ -221,7 +221,9 @@
     btn.setAttribute('aria-label', 'Search this site');
     btn.innerHTML = icon + '<span class="ss-label">Search</span>' +
       '<span class="ss-kbd">' + (/Mac|iPhone|iPad/.test(navigator.platform) ? '⌘K' : 'Ctrl K') + '</span>';
-    nav.insertBefore(btn, nav.querySelector('.hamburger') || null);
+    // Append last; CSS `order` places it after the links and before the
+    // hamburger on every breakpoint.
+    nav.appendChild(btn);
     btn.addEventListener('click', open);
 
     overlay = document.createElement('div');

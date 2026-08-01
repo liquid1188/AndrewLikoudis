@@ -538,7 +538,11 @@ nav{top:var(--strip-h);background:rgba(250,248,245,.85);backdrop-filter:blur(12p
    Site search  (trigger in nav + overlay palette)
    Injected by site.js — no per-page markup required.
    ============================================================ */
-.site-search-btn{margin-left:auto;display:flex;align-items:center;justify-content:center;gap:.45rem;background:none;border:1px solid rgba(201,169,98,.45);border-radius:4px;color:var(--text-light);cursor:pointer;padding:.38rem .6rem;font-family:'Lato',sans-serif;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;transition:border-color .25s,color .25s,background .25s}
+.nav-container > .nav-logo{order:1}
+.nav-container > .nav-links{order:2}
+.nav-container > .site-search-btn{order:3}
+.nav-container > .hamburger{order:4}
+.site-search-btn{margin-left:1.25rem;display:flex;align-items:center;justify-content:center;gap:.45rem;white-space:nowrap;flex-shrink:0;background:none;border:1px solid rgba(201,169,98,.45);border-radius:4px;color:var(--text-light);cursor:pointer;padding:.38rem .68rem;font-family:'Lato',sans-serif;font-size:.7rem;line-height:1;letter-spacing:.06em;text-transform:uppercase;transition:border-color .25s,color .25s,background .25s}
 .site-search-btn:hover,.site-search-btn:focus-visible{border-color:var(--gold);color:var(--burgundy);background:rgba(201,169,98,.08)}
 .site-search-btn svg{width:15px;height:15px;flex-shrink:0}
 .site-search-btn .ss-kbd{border:1px solid rgba(201,169,98,.5);border-radius:3px;padding:.05rem .3rem;font-size:.62rem;color:var(--text-light)}
@@ -573,7 +577,7 @@ nav{top:var(--strip-h);background:rgba(250,248,245,.85);backdrop-filter:blur(12p
 .ss-foot span{white-space:nowrap}
 
 @media(max-width:700px){
-  .site-search-btn{margin-left:auto;margin-right:.75rem;padding:.34rem .5rem}
+  .site-search-btn{margin-left:0;margin-right:.85rem;padding:.34rem .52rem}
   .site-search-btn .ss-label,.site-search-btn .ss-kbd{display:none}
   .ss-overlay{padding:0}
   .ss-panel{max-width:none;height:100%;border:none;border-radius:0;display:flex;flex-direction:column}
