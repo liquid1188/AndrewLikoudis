@@ -287,15 +287,24 @@ for fname, (url, label) in PAGES.items():
              "u": url + ("#" + hid if hid else ""), "b": tail[:900]})
 
 
-out = {"generated": True, "count": len(records), "records": records}
+# Emit a deliberately flat record shape:
+#   t = title, x = everything searchable, u = url, c = category
+# One substring pass over t and x is enough; nothing here needs weights.
+flat = []
+for r in records:
+    text = " ".join(x for x in (r["t"], r.get("s", ""), r.get("m", ""),
+                                r.get("kw", ""), r.get("b", "")) if x)
+    flat.append({"t": r["t"], "x": clean(text)[:1200], "u": r["u"], "c": r["k"]})
+
 path = os.path.join(ROOT, "search-index.json")
 with open(path, "w", encoding="utf-8") as fh:
-    json.dump(out, fh, ensure_ascii=False, separators=(",", ":"))
+    json.dump(flat, fh, ensure_ascii=False, separators=(",", ":"))
+
+print("wrote %s (%d records, %.1f KB)" % (
+    os.path.relpath(path, ROOT), len(flat), os.path.getsize(path) / 1024))
 
 by_kind = {}
 for r in records:
     by_kind[r["k"]] = by_kind.get(r["k"], 0) + 1
-print("wrote %s (%d records, %.1f KB)" % (
-    os.path.relpath(path, ROOT), len(records), os.path.getsize(path) / 1024))
 for k, v in sorted(by_kind.items()):
     print("   %-9s %d" % (k, v))

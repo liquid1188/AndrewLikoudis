@@ -12,287 +12,133 @@
   targets.forEach(function(t){ io.observe(t); });
 })();
 
-/* ============================================================
-   Site search
-   Self-contained, no dependencies. Injects its own trigger into
-   the nav and its own overlay into <body>, so no page markup
-   needs to change. Index is built by build-search-index.py and
-   fetched lazily on first use.
-   ============================================================ */
+/* ── SITE SEARCH ──
+   The nav is repeated on every page, so the control is injected here rather
+   than hand-added to each one. Index is fetched lazily on first open. */
 (function () {
-  'use strict';
+  var nav = document.querySelector('.nav-container');
+  if (!nav || document.getElementById('al-search-overlay')) return;
 
-  var INDEX_URL = '/search-index.json';
-  var KIND_LABEL = { book: 'Book', article: 'Article', talk: 'Appearance', page: 'Page', section: 'Section' };
-  var KIND_BOOST = { book: 26, article: 22, talk: 18, page: 14, section: 5 };
+  var LABEL = {book: 'Book', article: 'Article', talk: 'Appearance',
+               page: 'Page', section: 'Section'};
 
-  var index = null, loadPromise = null, results = [], active = -1, lastFocus = null;
-  var overlay, panel, input, list, status, isOpen = false;
+  var btn = document.createElement('button');
+  btn.className = 'nav-search-btn';
+  btn.type = 'button';
+  btn.setAttribute('aria-label', 'Search this site');
+  btn.title = 'Search';
+  btn.innerHTML = '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" ' +
+    'stroke="currentColor" stroke-width="1.8" stroke-linecap="round">' +
+    '<circle cx="11" cy="11" r="7"></circle>' +
+    '<line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>';
+  nav.appendChild(btn);
 
-  function esc(s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  var ov = document.createElement('div');
+  ov.id = 'al-search-overlay';
+  ov.innerHTML =
+    '<div class="al-s-panel" role="dialog" aria-modal="true" aria-label="Search">' +
+      '<button class="al-s-close" aria-label="Close search">&times;</button>' +
+      '<input type="search" class="al-s-input" placeholder="Search books, articles, talks…" ' +
+        'autocomplete="off" spellcheck="false">' +
+      '<div class="al-s-hint">Searches every book, article, talk and page.</div>' +
+      '<div class="al-s-results" aria-live="polite"></div>' +
+    '</div>';
+  document.body.appendChild(ov);
+
+  var input = ov.querySelector('.al-s-input'),
+      out   = ov.querySelector('.al-s-results'),
+      hint  = ov.querySelector('.al-s-hint'),
+      INDEX = null, loading = null, timer;
+
+  function load() {
+    if (INDEX || loading) return loading;
+    loading = fetch('/search-index.json').then(function (r) { return r.json(); })
+      .then(function (d) { INDEX = d; return d; })
+      .catch(function () { INDEX = []; return []; });
+    return loading;
+  }
+  function esc(t) {
+    return String(t).replace(/[&<>"]/g, function (c) {
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
     });
   }
-  function rxEsc(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
-
-  function highlight(text, tokens) {
-    var safe = esc(text);
-    if (!tokens.length) return safe;
-    var rx = new RegExp('(' + tokens.map(rxEsc).join('|') + ')', 'gi');
-    return safe.replace(rx, '<mark>$1</mark>');
+  function snip(text, q) {
+    var i = text.toLowerCase().indexOf(q);
+    if (i < 0) return esc(text.slice(0, 140)) + '…';
+    var a = Math.max(0, i - 55), b = Math.min(text.length, i + q.length + 105);
+    if (a > 0) { var sp = text.indexOf(' ', a); if (sp > -1 && sp < i) a = sp + 1; }
+    return (a > 0 ? '…' : '') + esc(text.slice(a, i)) + '<mark>' +
+      esc(text.slice(i, i + q.length)) + '</mark>' + esc(text.slice(i + q.length, b)) +
+      (b < text.length ? '…' : '');
   }
-
-  /* ---------- index ---------- */
-  function loadIndex() {
-    if (loadPromise) return loadPromise;
-    loadPromise = fetch(INDEX_URL, { credentials: 'same-origin' })
-      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function (d) { index = d.records || []; return index; });
-    return loadPromise;
-  }
-
-  /* ---------- scoring ---------- */
-  function score(rec, tokens, phrase) {
-    var t = rec._t || (rec._t = (rec.t || '').toLowerCase());
-    var s = rec._s || (rec._s = ((rec.s || '') + ' ' + (rec.m || '') + ' ' + (rec.kw || '')).toLowerCase());
-    var b = rec._b || (rec._b = (rec.b || '').toLowerCase());
-    var total = 0;
-
-    for (var i = 0; i < tokens.length; i++) {
-      var tok = tokens[i], pts = 0;
-      if (t.indexOf(tok) === 0) pts = 130;
-      else if (new RegExp('\\b' + rxEsc(tok)).test(t)) pts = 95;
-      else if (t.indexOf(tok) > -1) pts = 60;
-      else if (new RegExp('\\b' + rxEsc(tok)).test(s)) pts = 34;
-      else if (s.indexOf(tok) > -1) pts = 24;
-      else if (b.indexOf(tok) > -1) pts = 11;
-      else return 0;                        // every token must appear somewhere
-      total += pts;
-    }
-    if (phrase.length > 2) {
-      if (t.indexOf(phrase) > -1) total += 70;
-      else if (s.indexOf(phrase) > -1) total += 25;
-    }
-    total += KIND_BOOST[rec.k] || 0;
-    if (rec.t.length < 46) total += 6;       // prefer tight, specific titles
-    return total;
-  }
-
-  function search(q) {
-    var phrase = q.trim().toLowerCase();
-    var tokens = phrase.split(/\s+/).filter(Boolean);
-    if (!tokens.length || !index) return [];
-    var out = [];
-    for (var i = 0; i < index.length; i++) {
-      var sc = score(index[i], tokens, phrase);
-      if (sc > 0) out.push({ r: index[i], sc: sc, tokens: tokens });
-    }
-    out.sort(function (a, b) { return b.sc - a.sc || a.r.t.length - b.r.t.length; });
-    return out.slice(0, 24);
-  }
-
-  /* pick the most useful snippet: the stored one, or a window around a body hit */
-  function snippetFor(rec, tokens) {
-    if (rec.s) {
-      for (var i = 0; i < tokens.length; i++) {
-        if (rec.s.toLowerCase().indexOf(tokens[i]) > -1) return rec.s;
-      }
-    }
-    var body = rec.b || '';
-    var low = body.toLowerCase(), at = -1;
-    for (var j = 0; j < tokens.length && at < 0; j++) at = low.indexOf(tokens[j]);
-    if (at > -1) {
-      var start = Math.max(0, at - 60);
-      return (start > 0 ? '… ' : '') + body.slice(start, start + 190).trim() + '…';
-    }
-    return rec.s || body.slice(0, 160);
-  }
-
-  /* ---------- rendering ---------- */
   function render(q) {
-    if (!q.trim()) {
-      list.innerHTML = '';
-      status.textContent = index
-        ? 'Search books, articles, talks and pages.'
-        : 'Loading…';
-      status.style.display = 'block';
-      results = []; active = -1;
+    if (!INDEX) { out.innerHTML = '<p class="al-s-empty">Loading…</p>'; return; }
+    var hits = [];
+    for (var i = 0; i < INDEX.length; i++) {
+      var d = INDEX[i],
+          inT = d.t.toLowerCase().indexOf(q) > -1,
+          at  = d.x.toLowerCase().indexOf(q);
+      if (!inT && at < 0) continue;
+      hits.push({d: d, inT: inT, at: inT ? -1 : at, main: d.c !== 'section'});
+    }
+    if (!hits.length) {
+      out.innerHTML = '<p class="al-s-empty">Nothing matched &ldquo;' + esc(q) + '&rdquo;.</p>';
       return;
     }
-    results = search(q);
-    active = results.length ? 0 : -1;
-
-    if (!results.length) {
-      list.innerHTML = '';
-      status.textContent = 'No matches for “' + q.trim() + '”.';
-      status.style.display = 'block';
-      return;
-    }
-    status.style.display = 'none';
-
-    list.innerHTML = results.map(function (hit, i) {
-      var r = hit.r, ext = /^https?:/i.test(r.u);
-      return '<a class="ss-item' + (i === 0 ? ' active' : '') + '" role="option" id="ss-opt-' + i +
-        '" aria-selected="' + (i === 0) + '" href="' + esc(r.u) + '"' +
-        (ext ? ' target="_blank" rel="noopener"' : '') + ' data-i="' + i + '">' +
-        '<span class="ss-item-main">' +
-        '<span class="ss-title">' + highlight(r.t, hit.tokens) + '</span>' +
-        '<span class="ss-snippet">' + highlight(snippetFor(r, hit.tokens), hit.tokens) + '</span>' +
-        (r.m ? '<span class="ss-meta">' + esc(r.m) + '</span>' : '') +
-        '</span>' +
-        (ext ? '<span class="ss-ext" aria-hidden="true">↗</span>' : '') +
-        '<span class="ss-kind">' + (KIND_LABEL[r.k] || r.k) + '</span>' +
-        '</a>';
-    }).join('');
-
-    Array.prototype.forEach.call(list.querySelectorAll('.ss-item'), function (el) {
-      el.addEventListener('mousemove', function () { setActive(+el.dataset.i); });
-      el.addEventListener('click', function (e) { choose(+el.dataset.i, e); });
+    hits.sort(function (a, b) {
+      return (b.inT - a.inT) || (b.main - a.main) || (a.at - b.at);
     });
+    out.innerHTML = '<p class="al-s-count">' + hits.length +
+      (hits.length === 1 ? ' result' : ' results') + '</p>' +
+      hits.slice(0, 80).map(function (h) {
+        var ext = /^https?:/i.test(h.d.u);
+        return '<a class="al-s-hit" href="' + esc(h.d.u) + '"' +
+          (ext ? ' target="_blank" rel="noopener"' : '') + '>' +
+          '<span class="al-s-kind">' + esc(LABEL[h.d.c] || h.d.c) + '</span>' +
+          '<span class="al-s-title">' + esc(h.d.t) + '</span>' +
+          '<span class="al-s-snip">' + snip(h.d.x, q) + '</span></a>';
+      }).join('') +
+      (hits.length > 80 ? '<p class="al-s-empty">Showing the first 80. Keep typing to narrow.</p>' : '');
   }
-
-  function setActive(i) {
-    var items = list.querySelectorAll('.ss-item');
-    if (!items.length) return;
-    active = Math.max(0, Math.min(i, items.length - 1));
-    Array.prototype.forEach.call(items, function (el, n) {
-      el.classList.toggle('active', n === active);
-      el.setAttribute('aria-selected', n === active);
-    });
-    input.setAttribute('aria-activedescendant', 'ss-opt-' + active);
-    items[active].scrollIntoView({ block: 'nearest' });
-  }
-
-  function choose(i, e) {
-    var hit = results[i];
-    if (!hit) return;
-    var u = hit.r.u;
-    if (typeof gtag === 'function') {
-      try { gtag('event', 'search', { search_term: input.value.trim() }); } catch (err) {}
-    }
-    if (/^https?:/i.test(u)) return;                     // let the browser open it
-    var m = u.match(/^\/books#(.+)$/);
-    if (m) {
-      if (e) e.preventDefault();
-      close();
-      if (/\/books(\.html)?\/?$/.test(location.pathname) && typeof window.openBookModal === 'function') {
-        window.openBookModal(m[1]);
-        history.replaceState && history.replaceState(null, '', u);
-      } else {
-        location.href = u;
-      }
-    }
-  }
-
-  /* ---------- open / close ---------- */
   function open() {
-    if (isOpen) return;
-    isOpen = true;
-    lastFocus = document.activeElement;
-    overlay.classList.add('open');
+    ov.classList.add('open');
     document.body.style.overflow = 'hidden';
-    input.value = '';
-    render('');
-    input.focus();
-    loadIndex().then(function () { render(input.value); })
-      .catch(function () { status.textContent = 'Search is unavailable right now.'; });
+    load();
+    setTimeout(function () { input.focus(); }, 40);
   }
-
   function close() {
-    if (!isOpen) return;
-    isOpen = false;
-    overlay.classList.remove('open');
+    ov.classList.remove('open');
     document.body.style.overflow = '';
-    if (lastFocus && lastFocus.focus) lastFocus.focus();
+    input.value = ''; out.innerHTML = ''; hint.style.display = '';
   }
 
-  /* ---------- build UI ---------- */
-  function build() {
-    var nav = document.querySelector('.nav-container');
-    if (!nav || document.querySelector('.site-search-btn')) return;
+  btn.addEventListener('click', open);
+  ov.querySelector('.al-s-close').addEventListener('click', close);
+  ov.addEventListener('click', function (e) { if (e.target === ov) close(); });
 
-    var icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
-      'stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>';
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && ov.classList.contains('open')) close();
+    else if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); open(); }
+    else if (e.key === '/' && !ov.classList.contains('open') &&
+             !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName) &&
+             !document.activeElement.isContentEditable) { e.preventDefault(); open(); }
+  });
 
-    var btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'site-search-btn';
-    btn.setAttribute('aria-label', 'Search this site');
-    btn.innerHTML = icon + '<span class="ss-label">Search</span>' +
-      '<span class="ss-kbd">' + (/Mac|iPhone|iPad/.test(navigator.platform) ? '⌘K' : 'Ctrl K') + '</span>';
-    // Append last; CSS `order` places it after the links and before the
-    // hamburger on every breakpoint.
-    nav.appendChild(btn);
-    btn.addEventListener('click', open);
+  input.addEventListener('input', function () {
+    var q = this.value.trim().toLowerCase();
+    clearTimeout(timer);
+    hint.style.display = q ? 'none' : '';
+    if (!q) { out.innerHTML = ''; return; }
+    timer = setTimeout(function () {
+      if (INDEX) render(q); else { render(q); load().then(function () { render(q); }); }
+    }, 110);
+  });
 
-    overlay = document.createElement('div');
-    overlay.className = 'ss-overlay';
-    overlay.innerHTML =
-      '<div class="ss-panel" role="dialog" aria-modal="true" aria-label="Site search">' +
-        '<div class="ss-inputwrap">' + icon +
-          '<input class="ss-input" type="search" autocomplete="off" spellcheck="false" ' +
-            'placeholder="Search books, articles, talks…" aria-label="Search this site" ' +
-            'role="combobox" aria-expanded="true" aria-controls="ss-list" aria-autocomplete="list">' +
-          '<button class="ss-close" type="button">Esc</button>' +
-        '</div>' +
-        '<div class="ss-status" role="status"></div>' +
-        '<div class="ss-results" id="ss-list" role="listbox" aria-label="Search results"></div>' +
-        '<div class="ss-foot"><span>↑ ↓ to navigate</span><span>↵ to open</span><span>Esc to close</span></div>' +
-      '</div>';
-    document.body.appendChild(overlay);
-
-    panel = overlay.querySelector('.ss-panel');
-    input = overlay.querySelector('.ss-input');
-    list = overlay.querySelector('.ss-results');
-    status = overlay.querySelector('.ss-status');
-
-    overlay.querySelector('.ss-close').addEventListener('click', close);
-    overlay.addEventListener('mousedown', function (e) { if (e.target === overlay) close(); });
-
-    var timer;
-    input.addEventListener('input', function () {
-      clearTimeout(timer);
-      var v = input.value;
-      timer = setTimeout(function () { render(v); }, 90);
-    });
-
-    input.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowDown') { e.preventDefault(); setActive(active + 1); }
-      else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(active - 1); }
-      else if (e.key === 'Enter') {
-        var el = list.querySelectorAll('.ss-item')[active];
-        if (el) { e.preventDefault(); el.click(); if (el.target !== '_blank') close(); }
-      }
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (isOpen && e.key === 'Escape') { e.preventDefault(); close(); return; }
-      if (isOpen && e.key === 'Tab') {                       // keep focus inside
-        e.preventDefault();
-        input.focus();
-        return;
-      }
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); open(); return; }
-      var tag = (e.target.tagName || '').toLowerCase();
-      if (e.key === '/' && !isOpen && tag !== 'input' && tag !== 'textarea' && !e.target.isContentEditable) {
-        e.preventDefault(); open();
-      }
-    });
-  }
-
-  /* deep link: /books#slug opens that book's modal */
-  function openBookFromHash() {
-    if (!/\/books(\.html)?\/?$/.test(location.pathname)) return;
+  /* /books#slug opens that book's modal */
+  if (/\/books(\.html)?\/?$/.test(location.pathname)) {
     var slug = (location.hash || '').replace(/^#/, '');
     if (slug && typeof window.openBookModal === 'function') {
       setTimeout(function () { window.openBookModal(slug); }, 60);
     }
   }
-
-  function init() { build(); openBookFromHash(); }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else { init(); }
 })();
