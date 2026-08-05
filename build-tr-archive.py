@@ -12,6 +12,9 @@ from datetime import datetime, timezone
 FEED = "https://traditionandrenewal.substack.com/feed"
 PATH = "tr-archive.json"
 
+def _norm(t):
+    return re.sub(r"[^a-z0-9]+", "", (t or "").lower())
+
 def clean(s, n=280):
     s = re.sub(r"<[^>]+>", " ", s or "")
     s = html.unescape(s)
@@ -26,18 +29,30 @@ def main():
     data = json.load(open(PATH, encoding="utf-8"))
     entries = data["entries"]
     known = {(e.get("url") or "").split("?")[0] for e in entries}
+    known |= {(a.get("url") or "").split("?")[0]
+              for e in entries for a in e.get("also_at", [])}
+    titles = {_norm(e["title"]): e for e in entries}
 
     added = 0
     for it in channel.findall("item"):
         link = (it.findtext("link") or "").split("?")[0]
         if not link or link in known:
             continue
+        title_now = html.unescape(it.findtext("title") or "").strip()
+        prior = titles.get(_norm(title_now))
+        if prior is not None:
+            # already published elsewhere first — record the cross-post, don't duplicate
+            prior.setdefault("also_at", []).append(
+                {"venue": "Tradition & Renewal", "url": link})
+            known.add(link)
+            added += 1
+            continue
         try:
             dt = datetime.strptime(it.findtext("pubDate"), "%a, %d %b %Y %H:%M:%S %Z")
         except (TypeError, ValueError):
             continue
         entries.append({
-            "title": html.unescape(it.findtext("title") or "").strip(),
+            "title": title_now,
             "url": link,
             "date": dt.strftime("%Y-%m-%d"),
             "venue": "Tradition & Renewal",
