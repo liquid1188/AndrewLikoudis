@@ -1,0 +1,28 @@
+name: Update Tradition & Renewal archive
+
+on:
+  schedule:
+    - cron: '20 9 * * *'   # daily, 09:20 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pull new essays from the Substack feed
+        run: python3 build-tr-archive.py
+      - name: Commit if the archive changed
+        run: |
+          if [ -n "$(git status --porcelain tr-archive.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add tr-archive.json
+            git commit -m "Archive: add newly published essays"
+            git push
+          else
+            echo "nothing to commit"
+          fi
