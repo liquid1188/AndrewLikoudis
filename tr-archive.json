@@ -81,14 +81,6 @@
    "excerpt": "Why So Many Catholics Feel Adrift Today"
   },
   {
-   "title": "Ecumenism at a Crossroad",
-   "url": "https://traditionandrenewal.substack.com/p/ecumenism-at-a-crossroad",
-   "date": "2026-06-03",
-   "venue": "Tradition & Renewal",
-   "sections": [],
-   "excerpt": "The thirtieth Orientale Lumen Conference comes to Washington this July — and the Likoudis Legacy Foundation is helping host it."
-  },
-  {
    "title": "Anthropocentrism is Christocentrism",
    "url": "https://traditionandrenewal.substack.com/p/anthropocentrism-is-christocentrism-c11",
    "date": "2026-05-27",
@@ -113,30 +105,6 @@
    "sections": []
   },
   {
-   "title": "Life update!",
-   "url": "https://traditionandrenewal.substack.com/p/life-update",
-   "date": "2026-05-13",
-   "venue": "Tradition & Renewal",
-   "sections": [],
-   "excerpt": "It’s official, this past week I finished my M.A."
-  },
-  {
-   "title": "Ending the Byzantine Greek Schism — Now Available for Pre-Order",
-   "url": "https://traditionandrenewal.substack.com/p/ending-the-byzantine-greek-schism",
-   "date": "2026-04-30",
-   "venue": "Tradition & Renewal",
-   "sections": [],
-   "excerpt": "In 325, the Council of Nicaea gave the undivided Church the Creed at the heart of Christian faith—the confession of Jesus Christ as “true God from true God, consubstantial with the Father.”"
-  },
-  {
-   "title": "Join the LLF Reading Circle",
-   "url": "https://traditionandrenewal.substack.com/p/join-the-llf-reading-circle",
-   "date": "2026-03-15",
-   "venue": "Tradition & Renewal",
-   "sections": [],
-   "excerpt": "We’re launching a reading circle this May!!!"
-  },
-  {
    "title": "That They May Be One",
    "venue": "Where Peter Is",
    "date": "2026-03-12",
@@ -145,35 +113,17 @@
    "sections": []
   },
   {
-   "title": "Call for Papers",
-   "url": "https://traditionandrenewal.substack.com/p/call-for-papers",
-   "date": "2026-03-11",
-   "venue": "Tradition & Renewal",
-   "sections": [],
-   "excerpt": "We’ve just released the first Call for Papers for The Kydones Review, the new academic journal of the Likoudis Legacy Foundation."
-  },
-  {
    "title": "Standing to Receive Communion, Part II: The Anthropological Question",
    "venue": "Where Peter Is",
    "date": "2026-03-06",
    "url": "https://wherepeteris.com/standing-to-receive-communion-part-ii-the-anthropological-question/",
-   "sections": []
-  },
-  {
-   "title": "Standing to Receive Communion, Part II:",
-   "url": "https://traditionandrenewal.substack.com/p/standing-to-receive-communion-part",
-   "date": "2026-03-03",
-   "venue": "Tradition & Renewal",
    "sections": [],
-   "excerpt": "The Anthropological Question"
-  },
-  {
-   "title": "A Home for the Work",
-   "url": "https://traditionandrenewal.substack.com/p/a-home-for-the-work",
-   "date": "2026-02-28",
-   "venue": "Tradition & Renewal",
-   "sections": [],
-   "excerpt": "Launching my personal website, and a note on gathering what has been dispersed."
+   "also_at": [
+    {
+     "venue": "Tradition & Renewal",
+     "url": "https://traditionandrenewal.substack.com/p/standing-to-receive-communion-part"
+    }
+   ]
   },
   {
    "title": "Modernism Strikes Again?",
@@ -212,14 +162,6 @@
    "url": "https://www.ncregister.com/news/organ-donation-assisted-suicide-ethics-medical-malpractice",
    "excerpt": "",
    "sections": []
-  },
-  {
-   "title": "Tradition & Renewal",
-   "url": "https://traditionandrenewal.substack.com/p/tradition-and-renewal",
-   "date": "2025-11-27",
-   "venue": "Tradition & Renewal",
-   "sections": [],
-   "excerpt": "An interview on the Exploring the Faith show"
   },
   {
    "title": "After Traditionis Custodes: Archbishop Cordileone and Liturgical Renewal",
@@ -510,19 +452,29 @@
    "sections": []
   },
   {
+   "title": "Nature and Grace: A Dilemma of Supernatural Proportions",
+   "url": "https://www.patheos.com/blogs/natureandgrace/2022/08/nature_and_grace_an_introduction/",
+   "date": "2022-08-01",
+   "venue": "Patheos",
+   "excerpt": "",
+   "sections": []
+  },
+  {
    "title": "An Evening with Alice von Hildebrand",
    "venue": "National Catholic Register",
    "date": "2022-01-27",
    "url": "https://www.ncregister.com/blog/alice-von-hildebrand-last-interview",
    "sections": []
-  },
-  {
-   "title": "Nature and Grace",
-   "url": "https://www.patheos.com/blogs/natureandgrace/",
-   "date": "2022-01-01",
-   "venue": "Patheos",
-   "excerpt": "",
-   "sections": []
   }
+ ],
+ "excluded": [
+  "https://traditionandrenewal.substack.com/p/a-home-for-the-work",
+  "https://traditionandrenewal.substack.com/p/call-for-papers",
+  "https://traditionandrenewal.substack.com/p/ecumenism-at-a-crossroad",
+  "https://traditionandrenewal.substack.com/p/ending-the-byzantine-greek-schism",
+  "https://traditionandrenewal.substack.com/p/join-the-llf-reading-circle",
+  "https://traditionandrenewal.substack.com/p/life-update",
+  "https://traditionandrenewal.substack.com/p/standing-to-receive-communion-part",
+  "https://traditionandrenewal.substack.com/p/tradition-and-renewal"
  ]
 }

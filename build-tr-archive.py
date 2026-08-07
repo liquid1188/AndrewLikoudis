@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Append newly published Substack essays to tr-archive.json.
 
+Only essays belong here. Announcements, calls for papers, pre-order notices,
+life updates, and podcast appearances are listed under "excluded" in the JSON
+and are never re-added. To drop a future post, move its URL into that list.
+
 Substack's RSS feed only exposes the 20 most recent posts, so anything older
 disappears from the feed permanently. This keeps a durable, version-controlled
 copy. Run daily by .github/workflows/tr-archive.yml.
@@ -35,6 +39,9 @@ def main():
     data = json.load(open(PATH, encoding="utf-8"))
     entries = data["entries"]
     known = {(e.get("url") or "").split("?")[0] for e in entries}
+    # announcements, promos, and media appearances deliberately kept out of the archive
+    excluded = {(u or "").split("?")[0] for u in data.get("excluded", [])}
+    known |= excluded
     known |= {(a.get("url") or "").split("?")[0]
               for e in entries for a in e.get("also_at", [])}
     titles = {_norm(e["title"]): e for e in entries}
