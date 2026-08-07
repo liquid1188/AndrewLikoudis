@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-05",
+ "updated": "2026-08-06",
  "entries": [
   {
    "title": "We Must Build",
@@ -27,11 +27,11 @@
   },
   {
    "title": "The Oldest New Thing in the Church",
-   "url": "https://traditionandrenewal.substack.com/p/the-oldest-new-thing-in-the-church",
-   "date": "2026-07-22",
    "venue": "Tradition & Renewal",
-   "sections": [],
-   "excerpt": "Synodality did not begin in 2021. It began in Jerusalem, around the year AD 49."
+   "date": "2026-07-22",
+   "url": "https://traditionandrenewal.substack.com/p/the-oldest-new-thing-in-the-church",
+   "excerpt": "Synodality did not begin in 2021. It began in Jerusalem, around the year AD 49.",
+   "sections": []
   },
   {
    "title": "A Reader's Guide Through the SSPX Crisis",
@@ -50,12 +50,19 @@
    "excerpt": "A Conversation with Larry Chapp and Andrew Mioni on the SSPX Schism, and why a fifty-year-old book by a French Dominican is the most timely thing you can read this week."
   },
   {
-   "title": "The Baltimore Basilica and The Sunlight of Authentic Freedom",
-   "url": "https://traditionandrenewal.substack.com/p/the-baltimore-basilica-and-the-sunlight",
-   "date": "2026-06-20",
+   "title": "Collin Westerlund’s Beautiful World",
+   "venue": "Patheos",
+   "date": "2026-07-01",
+   "url": "https://www.patheos.com/blogs/natureandgrace/2026/07/collin-westerlunds-beautiful-world/",
+   "sections": []
+  },
+  {
+   "title": "The Baltimore Basilica and the Sunlight of Authentic Freedom",
    "venue": "Tradition & Renewal",
-   "sections": [],
-   "excerpt": "(Photo of the Baltimore Basilica’s main dome, taken by Haytham ad-Din → The Photographic Muslim)"
+   "date": "2026-06-20",
+   "url": "https://traditionandrenewal.substack.com/p/the-baltimore-basilica-and-the-sunlight",
+   "excerpt": "(Photo of the Baltimore Basilica’s main dome, taken by Haytham ad-Din → The Photographic Muslim)",
+   "sections": []
   },
   {
    "title": "Christian Humanism at the End of a Human Age",
@@ -98,11 +105,25 @@
    "excerpt": "It’s official, this past week I finished my M.A."
   },
   {
+   "title": "Leo XIV Opens a New Catechetical Cycle on Sacrosanctum Concilium",
+   "venue": "Where Peter Is",
+   "date": "2026-05-01",
+   "url": "https://wherepeteris.com/leo-xiv-opens-a-new-catechetical-cycle-on-sacrosanctum-concilium/",
+   "sections": []
+  },
+  {
    "title": "Leo XIV Issues First Encyclical, Calling AI a ‘Change of Epoch’ for the Human Person",
    "url": "https://wherepeteris.com/leo-xiv-issues-first-encyclical-calling-ai-a-change-of-epoch-for-the-human-person/",
    "date": "2026-05-01",
    "venue": "Where Peter Is",
    "excerpt": "",
+   "sections": []
+  },
+  {
+   "title": "Leo’s First Encyclical: AI is a ‘Change of Epoch’ for Humanity",
+   "venue": "Where Peter Is",
+   "date": "2026-05-01",
+   "url": "https://wherepeteris.com/leo-xiv-issues-first-encyclical-calling-ai-a-change-of-epoch-for-the-human-person/",
    "sections": []
   },
   {
@@ -123,11 +144,11 @@
   },
   {
    "title": "That They May Be One",
-   "url": "https://traditionandrenewal.substack.com/p/that-they-may-be-one",
+   "venue": "Where Peter Is",
    "date": "2026-03-12",
-   "venue": "Tradition & Renewal",
-   "sections": [],
-   "excerpt": "The Prayer That Defines the Church’s Mission"
+   "url": "https://traditionandrenewal.substack.com/p/that-they-may-be-one",
+   "excerpt": "The Prayer That Defines the Church’s Mission",
+   "sections": []
   },
   {
    "title": "Call for Papers",
@@ -144,6 +165,13 @@
    "venue": "Tradition & Renewal",
    "sections": [],
    "excerpt": "The Anthropological Question"
+  },
+  {
+   "title": "Standing to Receive Communion, Part II: The Anthropological Question",
+   "venue": "Where Peter Is",
+   "date": "2026-03-01",
+   "url": "https://wherepeteris.com/standing-to-receive-communion-part-ii-the-anthropological-question/",
+   "sections": []
   },
   {
    "title": "A Home for the Work",
@@ -163,31 +191,31 @@
   },
   {
    "title": "The Case for Standing to Receive Communion",
-   "url": "https://wherepeteris.com/the-case-for-standing-to-receive-communion/",
-   "date": "2026-02-01",
    "venue": "Where Peter Is",
+   "date": "2026-02-20",
+   "url": "https://wherepeteris.com/the-case-for-standing-to-receive-communion/",
    "excerpt": "Many sincere Catholics associate kneeling with greater reverence and standing with something less.",
-   "sections": [],
    "also_at": [
     {
      "venue": "Tradition & Renewal",
      "url": "https://traditionandrenewal.substack.com/p/the-case-for-standing-to-receive"
     }
-   ]
+   ],
+   "sections": []
   },
   {
-   "title": "In the Footsteps of Francis: Ten Lines of Continuity in Leo XIV's Church",
-   "url": "https://wherepeteris.com/in-the-footsteps-of-francis-ten-lines-of-continuity-in-leo-xivs-church/",
-   "date": "2026-02-01",
+   "title": "In the Footsteps of Francis: Ten Lines of Continuity in Leo XIV’s Church",
    "venue": "Where Peter Is",
+   "date": "2026-01-01",
+   "url": "https://wherepeteris.com/in-the-footsteps-of-francis-ten-lines-of-continuity-in-leo-xivs-church/",
    "excerpt": "",
    "sections": []
   },
   {
    "title": "Ethicists Warn About the Dangers of Linking Assisted Suicide to Organ Donation",
-   "url": "https://www.ncregister.com/news/organ-donation-assisted-suicide-ethics-medical-malpractice",
-   "date": "2026-01-01",
    "venue": "National Catholic Register",
+   "date": "2026-01-01",
+   "url": "https://www.ncregister.com/news/organ-donation-assisted-suicide-ethics-medical-malpractice",
    "excerpt": "",
    "sections": []
   },
@@ -200,6 +228,21 @@
    "excerpt": "An interview on the Exploring the Faith show"
   },
   {
+   "title": "After Traditionis Custodes: Exclusive Interview with Abp. Cordileone",
+   "venue": "Where Peter Is",
+   "date": "2025-11-01",
+   "url": "https://wherepeteris.com/after-traditionis-custodes-archbishop-cordileone-and-liturgical-renewal/",
+   "sections": []
+  },
+  {
+   "title": "Pierre Calls U.S. Bishops to Renew the Vision of Vatican II",
+   "venue": "Where Peter Is",
+   "date": "2025-11-01",
+   "url": "https://wherepeteris.com/pierre-calls-u-s-bishops-to-renew-the-vision-of-vatican-ii/",
+   "excerpt": "",
+   "sections": []
+  },
+  {
    "title": "After Traditionis Custodes: Archbishop Cordileone and Liturgical Renewal (Exclusive Interview)An exclusive interview with the Archbishop of San Francisco on the future of liturgical renewal after Rome's decision to uphold Traditionis Custodes.",
    "url": "https://wherepeteris.com/after-traditionis-custodes-archbishop-cordileone-and-liturgical-renewal/",
    "date": "2025-11-01",
@@ -208,18 +251,10 @@
    "sections": []
   },
   {
-   "title": "Pierre Calls U.S. Bishops to Renew the Vision of Vatican II",
-   "url": "https://wherepeteris.com/pierre-calls-u-s-bishops-to-renew-the-vision-of-vatican-ii/",
-   "date": "2025-11-01",
-   "venue": "Where Peter Is",
-   "excerpt": "",
-   "sections": []
-  },
-  {
    "title": "A Vocation in Beauty: How Music Is Restoring the Sacred",
-   "url": "https://www.ncregister.com/features/sacred-music-apostolates",
-   "date": "2025-10-01",
    "venue": "National Catholic Register",
+   "date": "2025-10-01",
+   "url": "https://www.ncregister.com/features/sacred-music-apostolates",
    "excerpt": "",
    "sections": []
   },
@@ -232,67 +267,220 @@
    "sections": []
   },
   {
-   "title": "Patron Saint of Fashion? Pier Giorgio Frassati Dressed for God",
-   "url": "https://www.ncregister.com/features/frassati-tailored-for-holiness",
-   "date": "2025-09-01",
+   "title": "Camaraderie of Bells, Beanies and Ballads: Quirky Traditions at US Catholic Colleges",
    "venue": "National Catholic Register",
-   "excerpt": "",
+   "date": "2025-09-01",
+   "url": "https://www.ncregister.com/features/quirky-college-traditions",
    "sections": []
   },
   {
    "title": "Bugnini, the Protestant Myth, and the Making of the New Mass",
-   "url": "https://wherepeteris.com/bugnini-the-protestant-myth-and-the-making-of-the-new-mass/",
-   "date": "2025-09-01",
    "venue": "Where Peter Is",
+   "date": "2025-08-01",
+   "url": "https://wherepeteris.com/bugnini-the-protestant-myth-and-the-making-of-the-new-mass/",
+   "excerpt": "",
+   "sections": []
+  },
+  {
+   "title": "Patron Saint of Fashion? Pier Giorgio Frassati Dressed for God",
+   "venue": "National Catholic Register",
+   "date": "2025-08-01",
+   "url": "https://www.ncregister.com/features/frassati-tailored-for-holiness",
    "excerpt": "",
    "sections": []
   },
   {
    "title": "Smart Glasses Offer a Glimpse of the Future — But the Church Sees More Clearly",
-   "url": "https://www.ncregister.com/news/smart-glasses-offer-a-glimpse-of-the-future-but-the-church-sees-more-clearly",
-   "date": "2025-08-01",
    "venue": "National Catholic Register",
+   "date": "2025-08-01",
+   "url": "https://www.ncregister.com/news/smart-glasses-offer-a-glimpse-of-the-future-but-the-church-sees-more-clearly",
    "excerpt": "",
    "sections": []
   },
   {
-   "title": "'Faith Through Friendship': DC Social Collective Builds Young Adult Community",
-   "url": "https://www.ncregister.com/features/dc-social-collective-builds-young-adult-community",
-   "date": "2025-07-01",
+   "title": "Appaloosa at 10: Americana Music Festival With a Catholic Soul",
    "venue": "National Catholic Register",
-   "excerpt": "",
+   "date": "2025-08-01",
+   "url": "https://www.ncregister.com/features/appaloosa-at-10",
    "sections": []
   },
   {
    "title": "Bishops Draw the Line at Border-Wall Expansion",
-   "url": "https://www.ncregister.com/news/bishops-draw-the-line-at-border-wall-expansion",
-   "date": "2025-07-01",
    "venue": "National Catholic Register",
+   "date": "2025-07-01",
+   "url": "https://www.ncregister.com/news/bishops-draw-the-line-at-border-wall-expansion",
    "excerpt": "",
    "sections": []
   },
   {
-   "title": "Pope Francis: A Reflection of Christ's Tenderness",
-   "url": "https://catholicreview.org/pope-francis-a-reflection-of-christs-tenderness-merch/",
-   "date": "2025-05-01",
-   "venue": "Catholic Review",
+   "title": "‘Faith Through Friendship’: DC Social Collective Builds Young Adult Community",
+   "venue": "National Catholic Register",
+   "date": "2025-07-01",
+   "url": "https://www.ncregister.com/features/dc-social-collective-builds-young-adult-community",
    "excerpt": "",
+   "sections": []
+  },
+  {
+   "title": "Jubilee of Youth: How Can Gen Z Build Up the Church?",
+   "venue": "National Catholic Register",
+   "date": "2025-07-01",
+   "url": "https://www.ncregister.com/news/jubilee-of-youth-how-can-gen-z-build-up-the-church",
+   "sections": []
+  },
+  {
+   "title": "From Cloudburst to Country Two-Step: DC Social Collective’s Biggest Night Yet",
+   "venue": "National Catholic Register",
+   "date": "2025-07-01",
+   "url": "https://www.ncregister.com/blog/dc-social-collective-creates-community",
+   "sections": []
+  },
+  {
+   "title": "How the Knights’ Sacred Heart Pilgrim Icon Fans the Flames of Divine Love and Mercy",
+   "venue": "National Catholic Register",
+   "date": "2025-06-01",
+   "url": "https://www.ncregister.com/blog/knights-sacred-heart-pilgrim-icon-fans-the-flames-of-divine-love-and-mercy",
+   "sections": []
+  },
+  {
+   "title": "In Mother Seton’s Footsteps: Pilgrims Walk 55 Miles to Honor America’s First Canonized Saint",
+   "venue": "National Catholic Register",
+   "date": "2025-06-01",
+   "url": "https://www.ncregister.com/news/in-mother-seton-s-footsteps-pilgrimage",
+   "sections": []
+  },
+  {
+   "title": "Turn Your Catholic Idea Into a Thriving Venture at SENT Ventures",
+   "venue": "National Catholic Register",
+   "date": "2025-06-01",
+   "url": "https://www.ncregister.com/news/sent-ventures-4th-annual-summit-planned-at-notre-dame",
+   "sections": []
+  },
+  {
+   "title": "Simone Biles Apologizes for ‘Personal’ Attacks on Riley Gaines in Viral Clash Over Transgender Athletes",
+   "venue": "National Catholic Register",
+   "date": "2025-06-01",
+   "url": "https://www.ncregister.com/news/simone-biles-riley-gaines-transgender-athletes-clash",
+   "sections": []
+  },
+  {
+   "title": "Mount Everest Mass Makes History at the ‘Top of the World’",
+   "venue": "National Catholic Register",
+   "date": "2025-06-01",
+   "url": "https://www.ncregister.com/features/priest-celebrates-mass-mount-everest",
+   "sections": []
+  },
+  {
+   "title": "Swiss Suicide Pod Case Takes Another Deadly Turn",
+   "venue": "National Catholic Register",
+   "date": "2025-06-01",
+   "url": "https://www.ncregister.com/news/swiss-suicide-pod-case-takes-another-deadly-turn",
+   "sections": []
+  },
+  {
+   "title": "Pope Francis: A Reflection of Christ’s Tenderness",
+   "venue": "Catholic Review",
+   "date": "2025-05-01",
+   "url": "https://catholicreview.org/pope-francis-a-reflection-of-christs-tenderness-merch/",
+   "excerpt": "",
+   "sections": []
+  },
+  {
+   "title": "Francis Remembered (Pope Francis tribute, with Rachel Dobbs)",
+   "venue": "Where Peter Is",
+   "date": "2025-05-01",
+   "url": "https://wherepeteris.com/francis-remembered-andrew-likoudis-and-rachel-dobbs/",
+   "sections": []
+  },
+  {
+   "title": "The Real Ratzinger: Beyond Partisanship — Review of The Essential Guide to Ratzinger by Matthew Ramage",
+   "venue": "Patheos",
+   "date": "2025-04-01",
+   "url": "https://www.patheos.com/blogs/natureandgrace/2025/04/the-real-ratzinger-beyond-partisanship/",
+   "sections": []
+  },
+  {
+   "title": "Affability: The Antidote to the Culture of Despair — Review of The Virtue of Affability by Anne DeSantis",
+   "venue": "Where Peter Is",
+   "date": "2025-01-01",
+   "url": "https://wherepeteris.com/affability-the-antidote-to-the-culture-of-despair/",
    "sections": []
   },
   {
    "title": "A Critique of Pure Atheism",
-   "url": "https://philosophynow.org/issues/165/A_Critique_of_Pure_Atheism",
-   "date": "2024-12-01",
    "venue": "Philosophy Now",
+   "date": "2024-12-01",
+   "url": "https://philosophynow.org/issues/165/A_Critique_of_Pure_Atheism",
    "excerpt": "A philosophical case that positive atheism requires more faith than theism",
    "sections": []
   },
   {
-   "title": "Beyond the Numbers: A Response to Bullivant and Cranney's TLM Data",
-   "url": "https://wherepeteris.com/beyond-the-numbers-a-response-to-bullivant-and-cranneys-tlm-data/",
-   "date": "2024-07-01",
+   "title": "James Likoudis Was a Beacon of Catholic Faith in a Changing World",
+   "venue": "National Catholic Register",
+   "date": "2024-09-01",
+   "sections": []
+  },
+  {
+   "title": "Beyond the Numbers: A Response to Bullivant and Cranney’s TLM Data",
    "venue": "Where Peter Is",
+   "date": "2024-07-01",
+   "url": "https://wherepeteris.com/beyond-the-numbers-a-response-to-bullivant-and-cranneys-tlm-data/",
    "excerpt": "",
+   "sections": []
+  },
+  {
+   "title": "Altar Against Altar — Review of Altar Against Altar by Andrew Mioni",
+   "venue": "Where Peter Is",
+   "date": "2024-07-01",
+   "url": "https://wherepeteris.com/altar-against-altar-wrestling-with-rifts-in-the-catholic-church/",
+   "sections": []
+  },
+  {
+   "title": "Jacob Collier Live at The Anthem with Lindsey Lomis",
+   "venue": "Patheos",
+   "date": "2024-05-01",
+   "url": "https://www.patheos.com/blogs/natureandgrace/2024/05/jacob-collier-live-at-the-anthem-with-lindsey-lomis/",
+   "sections": []
+  },
+  {
+   "title": "Pope Francis’s Liturgical Vision: Embracing Unity, Fostering Formation",
+   "venue": "Where Peter Is",
+   "date": "2024-01-01",
+   "url": "https://wherepeteris.com/pope-franciss-liturgical-vision-embracing-unity-fostering-formation/",
+   "sections": []
+  },
+  {
+   "title": "Benedict XVI’s Liturgical Vision: Summorum Pontificum and Beyond",
+   "venue": "Where Peter Is",
+   "date": "2024-01-01",
+   "url": "https://wherepeteris.com/benedict-xvis-liturgical-vision-summorum-pontificum-and-beyond/",
+   "sections": []
+  },
+  {
+   "title": "John Paul II and the Liturgical Reforms",
+   "venue": "Where Peter Is",
+   "date": "2024-01-01",
+   "url": "https://wherepeteris.com/john-paul-ii-and-the-liturgical-reforms/",
+   "sections": []
+  },
+  {
+   "title": "The Post-Conciliar Era: The Church and the Rise of Traditionalism",
+   "venue": "Where Peter Is",
+   "date": "2024-01-01",
+   "url": "https://wherepeteris.com/the-post-conciliar-era-the-church-and-the-rise-of-traditionalism/",
+   "sections": []
+  },
+  {
+   "title": "The Liturgical Path of the Church After Vatican II",
+   "venue": "Where Peter Is",
+   "date": "2024-01-01",
+   "url": "https://wherepeteris.com/the-liturgical-path-of-the-church-after-vatican-ii/",
+   "sections": []
+  },
+  {
+   "title": "Silver Jubilee of the Cardinal O’Connor Conference on Life",
+   "venue": "Patheos",
+   "date": "2024-01-01",
+   "url": "https://www.patheos.com/blogs/natureandgrace/2024/01/silver-jubilee-of-the-cardinal-oconnor-conference-on-life/",
    "sections": []
   },
   {
@@ -317,6 +505,13 @@
    "date": "2022-01-01",
    "venue": "Patheos",
    "excerpt": "",
+   "sections": []
+  },
+  {
+   "title": "An Evening with Alice von Hildebrand",
+   "venue": "National Catholic Register",
+   "date": "2022-01-01",
+   "url": "https://www.ncregister.com/blog/alice-von-hildebrand-last-interview",
    "sections": []
   }
  ]

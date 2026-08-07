@@ -6,10 +6,9 @@ disappears from the feed permanently. This keeps a durable, version-controlled
 copy. Run daily by .github/workflows/tr-archive.yml.
 """
 import json, re, html, sys, urllib.request
-import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 
-FEED = "https://traditionandrenewal.substack.com/feed"
+API = "https://traditionandrenewal.substack.com/api/v1/archive?sort=new&limit=50&offset="
 PATH = "tr-archive.json"
 
 def _norm(t):
@@ -22,9 +21,16 @@ def clean(s, n=280):
     return (s[:n].rsplit(" ", 1)[0] + "\u2026") if len(s) > n else s
 
 def main():
-    req = urllib.request.Request(FEED, headers={"User-Agent": "tr-archive/1.0"})
-    xml = urllib.request.urlopen(req, timeout=30).read()
-    channel = ET.fromstring(xml).find("channel")
+    posts, offset = [], 0
+    while True:
+        req = urllib.request.Request(API + str(offset), headers={"User-Agent": "tr-archive/1.0"})
+        batch = json.load(urllib.request.urlopen(req, timeout=30))
+        if not batch:
+            break
+        posts += batch
+        offset += 50
+        if len(batch) < 50:
+            break
 
     data = json.load(open(PATH, encoding="utf-8"))
     entries = data["entries"]
@@ -34,32 +40,32 @@ def main():
     titles = {_norm(e["title"]): e for e in entries}
 
     added = 0
-    for it in channel.findall("item"):
-        link = (it.findtext("link") or "").split("?")[0]
-        if not link or link in known:
+    for p in posts:
+        link = (p.get("canonical_url") or "").split("?")[0]
+        title_now = (p.get("title") or "").strip()
+        date_str = (p.get("post_date") or "")[:10]
+        if not link or link in known or not date_str:
             continue
-        title_now = html.unescape(it.findtext("title") or "").strip()
+        if title_now.lower() == "test":
+            continue
         prior = titles.get(_norm(title_now))
         if prior is not None:
-            # already published elsewhere first — record the cross-post, don't duplicate
+            # published elsewhere first — record the cross-post rather than duplicating
             prior.setdefault("also_at", []).append(
                 {"venue": "Tradition & Renewal", "url": link})
             known.add(link)
             added += 1
             continue
-        try:
-            dt = datetime.strptime(it.findtext("pubDate"), "%a, %d %b %Y %H:%M:%S %Z")
-        except (TypeError, ValueError):
-            continue
         entries.append({
             "title": title_now,
             "url": link,
-            "date": dt.strftime("%Y-%m-%d"),
+            "date": date_str,
             "venue": "Tradition & Renewal",
             "sections": [],
-            "excerpt": clean(it.findtext("description") or ""),
+            "excerpt": clean(p.get("subtitle") or ""),
         })
         known.add(link)
+        titles[_norm(title_now)] = entries[-1]
         added += 1
 
     if not added:
