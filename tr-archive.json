@@ -34,6 +34,13 @@
    "sections": []
   },
   {
+   "title": "Collin Westerlund’s Beautiful World",
+   "venue": "Patheos",
+   "date": "2026-07-20",
+   "url": "https://www.patheos.com/blogs/natureandgrace/2026/07/collin-westerlunds-beautiful-world/",
+   "sections": []
+  },
+  {
    "title": "A Reader's Guide Through the SSPX Crisis",
    "url": "https://traditionandrenewal.substack.com/p/a-readers-guide-through-the-sspx",
    "date": "2026-07-12",
@@ -48,13 +55,6 @@
    "venue": "Tradition & Renewal",
    "sections": [],
    "excerpt": "A Conversation with Larry Chapp and Andrew Mioni on the SSPX Schism, and why a fifty-year-old book by a French Dominican is the most timely thing you can read this week."
-  },
-  {
-   "title": "Collin Westerlund’s Beautiful World",
-   "venue": "Patheos",
-   "date": "2026-07-01",
-   "url": "https://www.patheos.com/blogs/natureandgrace/2026/07/collin-westerlunds-beautiful-world/",
-   "sections": []
   },
   {
    "title": "The Baltimore Basilica and the Sunlight of Authentic Freedom",
@@ -97,34 +97,28 @@
    "excerpt": "A Reply (that shouldn't be necessary) to Bishop Strickland"
   },
   {
+   "title": "Leo’s First Encyclical: AI is a ‘Change of Epoch’ for Humanity",
+   "url": "https://wherepeteris.com/leo-xiv-issues-first-encyclical-calling-ai-a-change-of-epoch-for-the-human-person/",
+   "date": "2026-05-25",
+   "venue": "Where Peter Is",
+   "excerpt": "",
+   "sections": [],
+   "cv_title": "Leo XIV Issues First Encyclical, Calling AI a ‘Change of Epoch’ for the Human Person"
+  },
+  {
+   "title": "Leo XIV Opens a New Catechetical Cycle on Sacrosanctum Concilium",
+   "venue": "Where Peter Is",
+   "date": "2026-05-20",
+   "url": "https://wherepeteris.com/leo-xiv-opens-a-new-catechetical-cycle-on-sacrosanctum-concilium/",
+   "sections": []
+  },
+  {
    "title": "Life update!",
    "url": "https://traditionandrenewal.substack.com/p/life-update",
    "date": "2026-05-13",
    "venue": "Tradition & Renewal",
    "sections": [],
    "excerpt": "It’s official, this past week I finished my M.A."
-  },
-  {
-   "title": "Leo XIV Opens a New Catechetical Cycle on Sacrosanctum Concilium",
-   "venue": "Where Peter Is",
-   "date": "2026-05-01",
-   "url": "https://wherepeteris.com/leo-xiv-opens-a-new-catechetical-cycle-on-sacrosanctum-concilium/",
-   "sections": []
-  },
-  {
-   "title": "Leo XIV Issues First Encyclical, Calling AI a ‘Change of Epoch’ for the Human Person",
-   "url": "https://wherepeteris.com/leo-xiv-issues-first-encyclical-calling-ai-a-change-of-epoch-for-the-human-person/",
-   "date": "2026-05-01",
-   "venue": "Where Peter Is",
-   "excerpt": "",
-   "sections": []
-  },
-  {
-   "title": "Leo’s First Encyclical: AI is a ‘Change of Epoch’ for Humanity",
-   "venue": "Where Peter Is",
-   "date": "2026-05-01",
-   "url": "https://wherepeteris.com/leo-xiv-issues-first-encyclical-calling-ai-a-change-of-epoch-for-the-human-person/",
-   "sections": []
   },
   {
    "title": "Ending the Byzantine Greek Schism — Now Available for Pre-Order",
@@ -159,19 +153,19 @@
    "excerpt": "We’ve just released the first Call for Papers for The Kydones Review, the new academic journal of the Likoudis Legacy Foundation."
   },
   {
+   "title": "Standing to Receive Communion, Part II: The Anthropological Question",
+   "venue": "Where Peter Is",
+   "date": "2026-03-06",
+   "url": "https://wherepeteris.com/standing-to-receive-communion-part-ii-the-anthropological-question/",
+   "sections": []
+  },
+  {
    "title": "Standing to Receive Communion, Part II:",
    "url": "https://traditionandrenewal.substack.com/p/standing-to-receive-communion-part",
    "date": "2026-03-03",
    "venue": "Tradition & Renewal",
    "sections": [],
    "excerpt": "The Anthropological Question"
-  },
-  {
-   "title": "Standing to Receive Communion, Part II: The Anthropological Question",
-   "venue": "Where Peter Is",
-   "date": "2026-03-01",
-   "url": "https://wherepeteris.com/standing-to-receive-communion-part-ii-the-anthropological-question/",
-   "sections": []
   },
   {
    "title": "A Home for the Work",
@@ -206,7 +200,7 @@
   {
    "title": "In the Footsteps of Francis: Ten Lines of Continuity in Leo XIV’s Church",
    "venue": "Where Peter Is",
-   "date": "2026-01-01",
+   "date": "2026-01-21",
    "url": "https://wherepeteris.com/in-the-footsteps-of-francis-ten-lines-of-continuity-in-leo-xivs-church/",
    "excerpt": "",
    "sections": []
@@ -214,7 +208,7 @@
   {
    "title": "Ethicists Warn About the Dangers of Linking Assisted Suicide to Organ Donation",
    "venue": "National Catholic Register",
-   "date": "2026-01-01",
+   "date": "2026-01-06",
    "url": "https://www.ncregister.com/news/organ-donation-assisted-suicide-ethics-medical-malpractice",
    "excerpt": "",
    "sections": []
@@ -228,187 +222,192 @@
    "excerpt": "An interview on the Exploring the Faith show"
   },
   {
-   "title": "After Traditionis Custodes: Exclusive Interview with Abp. Cordileone",
+   "title": "After Traditionis Custodes: Archbishop Cordileone and Liturgical Renewal",
    "venue": "Where Peter Is",
-   "date": "2025-11-01",
+   "date": "2025-11-17",
    "url": "https://wherepeteris.com/after-traditionis-custodes-archbishop-cordileone-and-liturgical-renewal/",
-   "sections": []
+   "sections": [],
+   "cv_title": "After Traditionis Custodes: Exclusive Interview with Abp. Cordileone",
+   "excerpt": "An exclusive interview with the Archbishop of San Francisco on the future of liturgical renewal after Rome's decision to uphold Traditionis Custodes."
   },
   {
    "title": "Pierre Calls U.S. Bishops to Renew the Vision of Vatican II",
    "venue": "Where Peter Is",
-   "date": "2025-11-01",
+   "date": "2025-11-12",
    "url": "https://wherepeteris.com/pierre-calls-u-s-bishops-to-renew-the-vision-of-vatican-ii/",
    "excerpt": "",
    "sections": []
   },
   {
-   "title": "After Traditionis Custodes: Archbishop Cordileone and Liturgical Renewal (Exclusive Interview)An exclusive interview with the Archbishop of San Francisco on the future of liturgical renewal after Rome's decision to uphold Traditionis Custodes.",
-   "url": "https://wherepeteris.com/after-traditionis-custodes-archbishop-cordileone-and-liturgical-renewal/",
-   "date": "2025-11-01",
-   "venue": "Where Peter Is",
-   "excerpt": "An exclusive interview with the Archbishop of San Francisco on the future of liturgical renewal after Rome's decision to uphold Traditionis Custodes.",
-   "sections": []
-  },
-  {
-   "title": "A Vocation in Beauty: How Music Is Restoring the Sacred",
+   "title": "A Vocation in Beauty: How Music Is Restoring the Sacred in a Secular Age",
    "venue": "National Catholic Register",
-   "date": "2025-10-01",
+   "date": "2025-10-29",
    "url": "https://www.ncregister.com/features/sacred-music-apostolates",
    "excerpt": "",
-   "sections": []
-  },
-  {
-   "title": "'Neuralink' vs. Imago Dei: Catholic Anthropology and AICatholic ethicists and philosophers weigh in on Elon Musk's brain-chip technology and what it means for the theology of the human person.",
-   "url": "https://www.ncregister.com/news/neuralink-vs-imago-dei",
-   "date": "2025-09-01",
-   "venue": "National Catholic Register",
-   "excerpt": "Catholic ethicists and philosophers weigh in on Elon Musk's brain-chip technology and what it means for the theology of the human person.",
-   "sections": []
+   "sections": [],
+   "cv_title": "A Vocation in Beauty: How Music Is Restoring the Sacred"
   },
   {
    "title": "Camaraderie of Bells, Beanies and Ballads: Quirky Traditions at US Catholic Colleges",
    "venue": "National Catholic Register",
-   "date": "2025-09-01",
+   "date": "2025-09-27",
    "url": "https://www.ncregister.com/features/quirky-college-traditions",
    "sections": []
   },
   {
+   "title": "‘Neuralink’ vs. Imago Dei: What Catholic Anthropology Has to Say About Musk’s Tech and AI",
+   "url": "https://www.ncregister.com/news/neuralink-vs-imago-dei",
+   "date": "2025-09-05",
+   "venue": "National Catholic Register",
+   "excerpt": "Catholic ethicists and philosophers weigh in on Elon Musk's brain-chip technology and what it means for the theology of the human person.",
+   "sections": [],
+   "cv_title": "'Neuralink' vs. Imago Dei: Catholic Anthropology and AICatholic ethicists and philosophers weigh in on Elon Musk's brain-chip technology and what it means for the theology of the human person."
+  },
+  {
    "title": "Bugnini, the Protestant Myth, and the Making of the New Mass",
    "venue": "Where Peter Is",
-   "date": "2025-08-01",
+   "date": "2025-08-28",
    "url": "https://wherepeteris.com/bugnini-the-protestant-myth-and-the-making-of-the-new-mass/",
    "excerpt": "",
    "sections": []
   },
   {
-   "title": "Patron Saint of Fashion? Pier Giorgio Frassati Dressed for God",
+   "title": "Patron Saint of Fashion? Soon-to-Be-Saint Pier Giorgio Frassati Dressed for God, Not for the World",
    "venue": "National Catholic Register",
-   "date": "2025-08-01",
+   "date": "2025-08-17",
    "url": "https://www.ncregister.com/features/frassati-tailored-for-holiness",
    "excerpt": "",
+   "sections": [],
+   "cv_title": "Patron Saint of Fashion? Pier Giorgio Frassati Dressed for God"
+  },
+  {
+   "title": "Appaloosa at 10: Americana Music Festival With a Catholic Soul",
+   "venue": "National Catholic Register",
+   "date": "2025-08-14",
+   "url": "https://www.ncregister.com/features/appaloosa-at-10",
    "sections": []
   },
   {
    "title": "Smart Glasses Offer a Glimpse of the Future — But the Church Sees More Clearly",
    "venue": "National Catholic Register",
-   "date": "2025-08-01",
+   "date": "2025-08-08",
    "url": "https://www.ncregister.com/news/smart-glasses-offer-a-glimpse-of-the-future-but-the-church-sees-more-clearly",
-   "excerpt": "",
-   "sections": []
-  },
-  {
-   "title": "Appaloosa at 10: Americana Music Festival With a Catholic Soul",
-   "venue": "National Catholic Register",
-   "date": "2025-08-01",
-   "url": "https://www.ncregister.com/features/appaloosa-at-10",
-   "sections": []
-  },
-  {
-   "title": "Bishops Draw the Line at Border-Wall Expansion",
-   "venue": "National Catholic Register",
-   "date": "2025-07-01",
-   "url": "https://www.ncregister.com/news/bishops-draw-the-line-at-border-wall-expansion",
-   "excerpt": "",
-   "sections": []
-  },
-  {
-   "title": "‘Faith Through Friendship’: DC Social Collective Builds Young Adult Community",
-   "venue": "National Catholic Register",
-   "date": "2025-07-01",
-   "url": "https://www.ncregister.com/features/dc-social-collective-builds-young-adult-community",
    "excerpt": "",
    "sections": []
   },
   {
    "title": "Jubilee of Youth: How Can Gen Z Build Up the Church?",
    "venue": "National Catholic Register",
-   "date": "2025-07-01",
+   "date": "2025-07-29",
    "url": "https://www.ncregister.com/news/jubilee-of-youth-how-can-gen-z-build-up-the-church",
    "sections": []
   },
   {
    "title": "From Cloudburst to Country Two-Step: DC Social Collective’s Biggest Night Yet",
    "venue": "National Catholic Register",
-   "date": "2025-07-01",
+   "date": "2025-07-18",
    "url": "https://www.ncregister.com/blog/dc-social-collective-creates-community",
    "sections": []
   },
   {
+   "title": "Bishops Draw the Line at Border-Wall Expansion",
+   "venue": "National Catholic Register",
+   "date": "2025-07-10",
+   "url": "https://www.ncregister.com/news/bishops-draw-the-line-at-border-wall-expansion",
+   "excerpt": "",
+   "sections": []
+  },
+  {
+   "title": "‘Faith Through Friendship’: How DC Social Collective Is Building Young-Adult Community in the Nation’s Capital",
+   "venue": "National Catholic Register",
+   "date": "2025-07-05",
+   "url": "https://www.ncregister.com/features/dc-social-collective-builds-young-adult-community",
+   "excerpt": "",
+   "sections": [],
+   "cv_title": "‘Faith Through Friendship’: DC Social Collective Builds Young Adult Community"
+  },
+  {
    "title": "How the Knights’ Sacred Heart Pilgrim Icon Fans the Flames of Divine Love and Mercy",
    "venue": "National Catholic Register",
-   "date": "2025-06-01",
+   "date": "2025-06-30",
    "url": "https://www.ncregister.com/blog/knights-sacred-heart-pilgrim-icon-fans-the-flames-of-divine-love-and-mercy",
    "sections": []
   },
   {
    "title": "In Mother Seton’s Footsteps: Pilgrims Walk 55 Miles to Honor America’s First Canonized Saint",
    "venue": "National Catholic Register",
-   "date": "2025-06-01",
+   "date": "2025-06-20",
    "url": "https://www.ncregister.com/news/in-mother-seton-s-footsteps-pilgrimage",
    "sections": []
   },
   {
-   "title": "Turn Your Catholic Idea Into a Thriving Venture at SENT Ventures",
+   "title": "Turn Your Catholic Idea Into a Thriving Venture at SENT Summit",
    "venue": "National Catholic Register",
-   "date": "2025-06-01",
+   "date": "2025-06-18",
    "url": "https://www.ncregister.com/news/sent-ventures-4th-annual-summit-planned-at-notre-dame",
-   "sections": []
+   "sections": [],
+   "cv_title": "Turn Your Catholic Idea Into a Thriving Venture at SENT Ventures"
   },
   {
    "title": "Simone Biles Apologizes for ‘Personal’ Attacks on Riley Gaines in Viral Clash Over Transgender Athletes",
    "venue": "National Catholic Register",
-   "date": "2025-06-01",
+   "date": "2025-06-10",
    "url": "https://www.ncregister.com/news/simone-biles-riley-gaines-transgender-athletes-clash",
    "sections": []
   },
   {
    "title": "Mount Everest Mass Makes History at the ‘Top of the World’",
    "venue": "National Catholic Register",
-   "date": "2025-06-01",
+   "date": "2025-06-10",
    "url": "https://www.ncregister.com/features/priest-celebrates-mass-mount-everest",
    "sections": []
   },
   {
    "title": "Swiss Suicide Pod Case Takes Another Deadly Turn",
    "venue": "National Catholic Register",
-   "date": "2025-06-01",
+   "date": "2025-06-05",
    "url": "https://www.ncregister.com/news/swiss-suicide-pod-case-takes-another-deadly-turn",
    "sections": []
   },
   {
-   "title": "Pope Francis: A Reflection of Christ’s Tenderness",
+   "title": "Francis Remembered: Andrew Likoudis and Rachel Dobbs",
+   "venue": "Where Peter Is",
+   "date": "2025-05-06",
+   "url": "https://wherepeteris.com/francis-remembered-andrew-likoudis-and-rachel-dobbs/",
+   "sections": [],
+   "cv_title": "Francis Remembered (Pope Francis tribute, with Rachel Dobbs)"
+  },
+  {
+   "title": "Pope Francis a reflection of Christ’s tenderness, mercy",
    "venue": "Catholic Review",
-   "date": "2025-05-01",
+   "date": "2025-04-24",
    "url": "https://catholicreview.org/pope-francis-a-reflection-of-christs-tenderness-merch/",
    "excerpt": "",
-   "sections": []
+   "sections": [],
+   "cv_title": "Pope Francis: A Reflection of Christ’s Tenderness"
   },
   {
-   "title": "Francis Remembered (Pope Francis tribute, with Rachel Dobbs)",
-   "venue": "Where Peter Is",
-   "date": "2025-05-01",
-   "url": "https://wherepeteris.com/francis-remembered-andrew-likoudis-and-rachel-dobbs/",
-   "sections": []
-  },
-  {
-   "title": "The Real Ratzinger: Beyond Partisanship — Review of The Essential Guide to Ratzinger by Matthew Ramage",
+   "title": "The Real Ratzinger: Beyond Partisanship",
    "venue": "Patheos",
-   "date": "2025-04-01",
+   "date": "2025-04-08",
    "url": "https://www.patheos.com/blogs/natureandgrace/2025/04/the-real-ratzinger-beyond-partisanship/",
-   "sections": []
+   "sections": [],
+   "cv_title": "The Real Ratzinger: Beyond Partisanship — Review of The Essential Guide to Ratzinger by Matthew Ramage",
+   "excerpt": "Review of The Essential Guide to Ratzinger by Matthew Ramage"
   },
   {
-   "title": "Affability: The Antidote to the Culture of Despair — Review of The Virtue of Affability by Anne DeSantis",
+   "title": "Affability: The Antidote to the Culture of Despair",
    "venue": "Where Peter Is",
-   "date": "2025-01-01",
+   "date": "2025-01-11",
    "url": "https://wherepeteris.com/affability-the-antidote-to-the-culture-of-despair/",
-   "sections": []
+   "sections": [],
+   "cv_title": "Affability: The Antidote to the Culture of Despair — Review of The Virtue of Affability by Anne DeSantis",
+   "excerpt": "Review of The Virtue of Affability by Anne DeSantis"
   },
   {
    "title": "A Critique of Pure Atheism",
    "venue": "Philosophy Now",
-   "date": "2024-12-01",
+   "date": "2024-12-10",
    "url": "https://philosophynow.org/issues/165/A_Critique_of_Pure_Atheism",
    "excerpt": "A philosophical case that positive atheism requires more faith than theism",
    "sections": []
@@ -416,56 +415,90 @@
   {
    "title": "James Likoudis Was a Beacon of Catholic Faith in a Changing World",
    "venue": "National Catholic Register",
-   "date": "2024-09-01",
-   "sections": []
+   "date": "2024-09-13",
+   "sections": [],
+   "url": "https://www.ncregister.com/commentaries/james-likoudis-theologian-and-historian",
+   "excerpt": "Co-written with Philip Blosser."
   },
   {
    "title": "Beyond the Numbers: A Response to Bullivant and Cranney’s TLM Data",
    "venue": "Where Peter Is",
-   "date": "2024-07-01",
+   "date": "2024-07-25",
    "url": "https://wherepeteris.com/beyond-the-numbers-a-response-to-bullivant-and-cranneys-tlm-data/",
    "excerpt": "",
    "sections": []
   },
   {
-   "title": "Altar Against Altar — Review of Altar Against Altar by Andrew Mioni",
+   "title": "Freedom to do What, Exactly?: C.S. Lewis and the Foundational Principle",
+   "url": "https://fellowshipandfairydust.com/2024/07/16/freedom-to-do-what-exactly/",
+   "date": "2024-07-16",
+   "venue": "Fellowship & Fairydust",
+   "excerpt": "",
+   "sections": [],
+   "cv_title": "Freedom to do What Exactly (CS Lewis Profile)",
+   "also_at": [
+    {
+     "venue": "Medium",
+     "url": "https://medium.com/@liquid.1188/freedom-to-do-what-exactly-the-philosophy-of-cs-lewis-17f34ac551e0"
+    }
+   ]
+  },
+  {
+   "title": "Altar Against Altar: Wrestling with Rifts in the Catholic Church",
    "venue": "Where Peter Is",
-   "date": "2024-07-01",
+   "date": "2024-07-03",
    "url": "https://wherepeteris.com/altar-against-altar-wrestling-with-rifts-in-the-catholic-church/",
-   "sections": []
+   "sections": [],
+   "cv_title": "Altar Against Altar — Review of Altar Against Altar by Andrew Mioni",
+   "excerpt": "Review of Altar Against Altar by Andrew Mioni"
   },
   {
    "title": "Jacob Collier Live at The Anthem with Lindsey Lomis",
    "venue": "Patheos",
-   "date": "2024-05-01",
+   "date": "2024-05-07",
    "url": "https://www.patheos.com/blogs/natureandgrace/2024/05/jacob-collier-live-at-the-anthem-with-lindsey-lomis/",
+   "sections": []
+  },
+  {
+   "title": "Silver Jubilee of the Cardinal O’Connor Conference on Life",
+   "venue": "Patheos",
+   "date": "2024-01-27",
+   "url": "https://www.patheos.com/blogs/natureandgrace/2024/01/silver-jubilee-of-the-cardinal-oconnor-conference-on-life/",
+   "sections": []
+  },
+  {
+   "title": "The Liturgical Reform: Council, Consilium, and Papacy (Parts 1–5)",
+   "url": "https://wherepeteris.com/the-liturgical-reform-council-consilium-and-papacy/",
+   "date": "2024-01-25",
+   "venue": "Where Peter Is",
+   "excerpt": "",
    "sections": []
   },
   {
    "title": "Pope Francis’s Liturgical Vision: Embracing Unity, Fostering Formation",
    "venue": "Where Peter Is",
-   "date": "2024-01-01",
+   "date": "2024-01-07",
    "url": "https://wherepeteris.com/pope-franciss-liturgical-vision-embracing-unity-fostering-formation/",
    "sections": []
   },
   {
    "title": "Benedict XVI’s Liturgical Vision: Summorum Pontificum and Beyond",
    "venue": "Where Peter Is",
-   "date": "2024-01-01",
+   "date": "2024-01-05",
    "url": "https://wherepeteris.com/benedict-xvis-liturgical-vision-summorum-pontificum-and-beyond/",
    "sections": []
   },
   {
    "title": "John Paul II and the Liturgical Reforms",
    "venue": "Where Peter Is",
-   "date": "2024-01-01",
+   "date": "2024-01-04",
    "url": "https://wherepeteris.com/john-paul-ii-and-the-liturgical-reforms/",
    "sections": []
   },
   {
    "title": "The Post-Conciliar Era: The Church and the Rise of Traditionalism",
    "venue": "Where Peter Is",
-   "date": "2024-01-01",
+   "date": "2024-01-02",
    "url": "https://wherepeteris.com/the-post-conciliar-era-the-church-and-the-rise-of-traditionalism/",
    "sections": []
   },
@@ -477,26 +510,10 @@
    "sections": []
   },
   {
-   "title": "Silver Jubilee of the Cardinal O’Connor Conference on Life",
-   "venue": "Patheos",
-   "date": "2024-01-01",
-   "url": "https://www.patheos.com/blogs/natureandgrace/2024/01/silver-jubilee-of-the-cardinal-oconnor-conference-on-life/",
-   "sections": []
-  },
-  {
-   "title": "The Liturgical Reform: Council, Consilium, and Papacy (Parts 1–5)",
-   "url": "https://wherepeteris.com/the-liturgical-reform-council-consilium-and-papacy/",
-   "date": "2024-01-01",
-   "venue": "Where Peter Is",
-   "excerpt": "",
-   "sections": []
-  },
-  {
-   "title": "Freedom to do What Exactly (CS Lewis Profile)",
-   "url": "https://medium.com/@liquid.1188/freedom-to-do-what-exactly-the-philosophy-of-cs-lewis-17f34ac551e0",
-   "date": "2022-02-01",
-   "venue": "Fellowship & Fairydust",
-   "excerpt": "",
+   "title": "An Evening with Alice von Hildebrand",
+   "venue": "National Catholic Register",
+   "date": "2022-01-27",
+   "url": "https://www.ncregister.com/blog/alice-von-hildebrand-last-interview",
    "sections": []
   },
   {
@@ -505,13 +522,6 @@
    "date": "2022-01-01",
    "venue": "Patheos",
    "excerpt": "",
-   "sections": []
-  },
-  {
-   "title": "An Evening with Alice von Hildebrand",
-   "venue": "National Catholic Register",
-   "date": "2022-01-01",
-   "url": "https://www.ncregister.com/blog/alice-von-hildebrand-last-interview",
    "sections": []
   }
  ]
