@@ -471,7 +471,7 @@
 @media(max-width:880px){.dispatch-grid{grid-template-columns:1fr;gap:1.25rem}.dispatch-card{min-height:0}}
 
 /* ===== Announcement strip + glass header (July 2026) ===== */
-:root{--strip-h:36px}
+:root{--strip-h:0px}
 body{padding-top:var(--strip-h)}
 nav{top:var(--strip-h);background:rgba(250,248,245,.85);backdrop-filter:blur(12px) saturate(1.4);-webkit-backdrop-filter:blur(12px) saturate(1.4)}
 .announce-strip{position:fixed;top:0;left:0;right:0;height:var(--strip-h);z-index:1001;background:linear-gradient(135deg,#5A252C,#722F37);display:flex;align-items:center;justify-content:center;padding:0 1rem;border-bottom:1px solid rgba(201,169,98,.35)}
@@ -567,3 +567,10 @@ nav{top:var(--strip-h);background:rgba(250,248,245,.85);backdrop-filter:blur(12p
 .section-label{color:#8a6d2b!important;}
 .floating-wwm.hidden-hero{opacity:0;pointer-events:none;transform:translateY(16px)}
 button.btn{font:inherit;cursor:pointer;line-height:inherit}
+
+/* keep intrinsic ratio when CSS sets one dimension */
+img[width][height]{height:auto}
+.logo-ribbon-track img[width][height]{width:auto;height:42px}
+.logo-ribbon-track img.logo-sq[width][height]{width:48px;height:48px}
+.logo-named-img[width][height],.logo-cr[width][height]{width:auto}
+.nav-logo img[width][height]{width:auto}
