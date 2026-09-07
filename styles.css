@@ -568,9 +568,5 @@ nav{top:var(--strip-h);background:rgba(250,248,245,.85);backdrop-filter:blur(12p
 .floating-wwm.hidden-hero{opacity:0;pointer-events:none;transform:translateY(16px)}
 button.btn{font:inherit;cursor:pointer;line-height:inherit}
 
-/* keep intrinsic ratio when CSS sets one dimension */
-img[width][height]{height:auto}
-.logo-ribbon-track img[width][height]{width:auto;height:42px}
-.logo-ribbon-track img.logo-sq[width][height]{width:48px;height:48px}
-.logo-named-img[width][height],.logo-cr[width][height]{width:auto}
-.nav-logo img[width][height]{width:auto}
+/* reserve space above the fold without fixed dimensions */
+.hero .img-frame-circle{aspect-ratio:1/1}
