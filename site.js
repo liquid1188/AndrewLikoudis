@@ -2,6 +2,8 @@
   var cta = document.querySelector('.floating-wwm');
   if (!cta) return;
   if (location.pathname.indexOf('work-with-me') !== -1) { cta.style.display = 'none'; return; }
+  var hero = document.querySelector('.hero');
+  if (hero) { var hio = new IntersectionObserver(function(es){ es.forEach(function(e){ cta.classList.toggle('hidden-hero', e.isIntersecting); }); }, { threshold: 0.2 }); hio.observe(hero); }
   var targets = document.querySelectorAll('footer, .contact-cta-section, .site-footer');
   if (!targets.length) return;
   var visible = new Set();

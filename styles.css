@@ -562,3 +562,8 @@ nav{top:var(--strip-h);background:rgba(250,248,245,.85);backdrop-filter:blur(12p
   .nav-search-li{justify-content:flex-start}
   .nav-search-btn{padding:.55rem 0}
 }
+
+/* audit: gold label contrast; hide floating CTA until past the hero */
+.section-label{color:#8a6d2b!important;}
+.floating-wwm.hidden-hero{opacity:0;pointer-events:none;transform:translateY(16px)}
+button.btn{font:inherit;cursor:pointer;line-height:inherit}
