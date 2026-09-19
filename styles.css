@@ -256,7 +256,7 @@
           .encounters-grid{grid-template-columns:repeat(2,1fr) !important}
           .encounters-grid img{height:auto !important;aspect-ratio:4/3 !important}
         }
-        @media(max-width:420px){
+        @media(max-width:340px){
           .encounters-grid{grid-template-columns:1fr !important}
         }
 
