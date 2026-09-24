@@ -572,3 +572,4 @@ button.btn{font:inherit;cursor:pointer;line-height:inherit}
 
 /* reserve space above the fold without fixed dimensions */
 .hero .img-frame-circle{aspect-ratio:1/1}
+@media(max-width:700px){.logo-band-row img.logo-anthropic{max-height:18px !important;width:auto !important;max-width:170px !important}}
