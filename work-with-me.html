@@ -94,11 +94,11 @@
             </div>
             <!-- Right column: intake form -->
             <div style="flex:1.6;min-width:280px">
-                <form class="contact-form" action="https://formsubmit.co/alikoudis@likoudislegacy.com" method="POST" style="padding:2rem">
-                    <input type="hidden" name="_subject" value="Project Inquiry — andrewlikoudis.com">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
-                    <input type="hidden" name="_template" value="table">
+                <form class="contact-form" id="wwm-form" action="https://api.web3forms.com/submit" method="POST" style="padding:2rem">
+                    <input type="hidden" name="access_key" value="">
+                    <input type="hidden" name="subject" value="Project Inquiry from andrewlikoudis.com">
+                    <input type="hidden" name="from_name" value="andrewlikoudis.com">
+                    <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
                     <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--burgundy);margin-bottom:1.25rem">Project Details</h3>
                     <div class="form-group">
                         <label for="f-name">Your Name *</label>
@@ -161,6 +161,7 @@
                         <textarea name="additional_notes" placeholder="Links, context, specific expertise needed..." style="min-height:70px" id="f-additional_notes"></textarea>
                     </div>
                     <button type="submit" class="submit-btn" style="background:linear-gradient(135deg,var(--burgundy),var(--burgundy-deep))">Submit Project Inquiry →</button>
+                    <p id="wwm-status" role="status" style="font-family:'Lato',sans-serif;font-size:.85rem;text-align:center;margin-top:.75rem;display:none"></p>
                     <p style="font-family:'Lato',sans-serif;font-size:.65rem;color:var(--text-light);text-align:center;margin-top:.75rem">I review all submissions personally. You'll hear back within 3–5 business days.</p>
                 </form>
             </div>
@@ -415,5 +416,6 @@ if(slides.length>1)setInterval(()=>{goToSlide((currentSlide+1)%slides.length)},1
   var target = document.getElementById('inquiry');
   if (target) setTimeout(function(){ target.scrollIntoView({behavior:'smooth'}); }, 150);
 })();
-</script></body>
+</script><script>(function(){var f=document.getElementById('wwm-form');if(!f)return;var st=document.getElementById('wwm-status');f.addEventListener('submit',function(e){e.preventDefault();var b=f.querySelector('button[type=submit]'),t=b.textContent;b.disabled=true;b.textContent='Sending...';var d=Object.fromEntries(new FormData(f));fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)}).then(function(r){return r.json()}).then(function(j){if(!j.success)throw 0;f.reset();st.style.display='block';st.style.color='var(--burgundy)';st.textContent='Thank you. Your inquiry is on its way, and I will reply within 3 to 5 business days.';try{gtag('event','generate_lead',{form:'work_with_me'})}catch(_){}}).catch(function(){st.style.display='block';st.style.color='#a33';st.innerHTML='Something went wrong sending the form. Please email <a href="mailto:alikoudis@likoudislegacy.com">alikoudis@likoudislegacy.com</a>.'}).finally(function(){b.disabled=false;b.textContent=t});});})();</script>
+</body>
 </html>
