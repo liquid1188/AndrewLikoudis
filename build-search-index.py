@@ -29,6 +29,7 @@ PAGES = OrderedDict([
     ("endorsements.html",   ("/endorsements",     "Endorsements")),
     ("gallery.html",        ("/gallery",          "Gallery")),
     ("faith-in-crisis.html", ("/faith-in-crisis", "Faith in Crisis")),
+    ("to-his-face.html",    ("/to-his-face",      "To His Face")),
 ])
 
 TAG_RE = re.compile(r"<[^>]+>")
