@@ -651,3 +651,14 @@ footer .footer-nav-row{width:380px;max-width:none!important}
 footer .footer-nav-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}
 .about-wp::before{opacity:1;-webkit-mask-image:linear-gradient(90deg,#000,rgba(0,0,0,.6) 30%,rgba(0,0,0,.6) 70%,#000);mask-image:linear-gradient(90deg,#000,rgba(0,0,0,.6) 30%,rgba(0,0,0,.6) 70%,#000)}
 .about-wp{padding-top:4.75rem!important;padding-bottom:4.25rem!important}
+@media(min-width:900px){
+footer .footer-content{grid-template-columns:1fr auto 1fr;column-gap:3.5rem;max-width:1240px}
+footer .footer-links-icons{justify-content:end!important;justify-self:end!important;margin-left:auto!important;margin-right:0!important}
+footer .footer-content>div:has(img[src*=kolbe]){justify-content:flex-start!important;justify-self:start}
+footer .footer-content>div:has(img[src*=kolbe]) p{font-size:.86rem!important;line-height:1.55!important;max-width:30rem}
+}
+@media(min-width:900px){
+footer .footer-content{grid-template-columns:minmax(0,1fr) max-content minmax(0,1fr)!important;column-gap:3rem!important;max-width:1180px!important}
+footer .footer-nav-row{max-width:none!important;width:max-content!important;column-gap:2rem!important}
+footer .footer-links-icons{max-width:340px!important}
+}
