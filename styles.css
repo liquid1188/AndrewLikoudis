@@ -609,7 +609,7 @@ footer .footer-copyright{color:rgba(255,255,255,.6)!important}
 footer .footer-content{display:grid;grid-template-columns:1fr 1.1fr 1.3fr;column-gap:3rem;row-gap:1.6rem;max-width:1120px;margin:0 auto;align-items:center;padding:0 1.5rem 1.5rem}
 footer .footer-quote-section{grid-column:1/-1;padding-bottom:.5rem!important}
 footer .footer-links-icons{grid-column:1;grid-row:2;margin:0!important;justify-content:flex-start!important;gap:1rem!important;flex-wrap:wrap}
-footer .footer-nav-row{grid-column:2;grid-row:2;margin:0!important;padding:0!important;border:0!important;display:grid!important;grid-template-columns:repeat(2,auto);justify-content:center;gap:.55rem 2rem!important}
+footer .footer-nav-row{grid-column:2;grid-row:2;margin:0!important;padding:0!important;border:0!important}
 footer .footer-content>div:has(img[src*=kolbe]){grid-column:3;grid-row:2;margin:0!important;max-width:none!important;padding:0!important;border:0!important}
 footer .footer-content>p:not([class]){grid-column:1;grid-row:3;margin:0!important;text-align:left!important}
 footer .footer-copyright{grid-column:2;grid-row:3;margin:0!important;text-align:center}
@@ -630,7 +630,12 @@ footer .footer-copyright{font-size:.85rem!important;color:rgba(255,255,255,.7)!i
 footer .footer-content>a[href*=buymeacoffee]{font-size:.85rem!important;color:rgba(255,255,255,.85)!important}
 @media(min-width:900px){footer .footer-quote{font-size:1.65rem!important}}
 footer .footer-icon-link span:last-child{white-space:nowrap}
-@media(max-width:899px){footer .footer-nav-row{display:grid!important;grid-template-columns:repeat(3,auto);justify-content:center;gap:.6rem 1.6rem!important}footer .footer-nav-row a{white-space:nowrap}footer .footer-links-icons{gap:.6rem!important}footer .footer-icon-link span:last-child{font-size:.72rem!important}}
+@media(max-width:899px){footer .footer-nav-row a{white-space:nowrap}footer .footer-links-icons{gap:.6rem!important}footer .footer-icon-link span:last-child{font-size:.72rem!important}}
 
 .about-wp{position:relative;isolation:isolate}
 .about-wp::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><g fill='none' stroke='%23A68A4B' stroke-opacity='0.21'><circle cx='0' cy='0' r='30.0'/><circle cx='60' cy='0' r='30.0'/><circle cx='0' cy='60' r='30.0'/><circle cx='60' cy='60' r='30.0'/><circle cx='30.0' cy='30.0' r='30.0'/></g><g stroke='%23A68A4B' stroke-opacity='0.28' stroke-width='1.1'><path d='M26.8 0H33.2M30.0 -3.2V3.2'/><path d='M-3.2 30.0H3.2M0 26.8V33.2'/><path d='M56.8 30.0H63.2M60 26.8V33.2'/><path d='M26.8 60H33.2M30.0 56.8V63.2'/></g><g fill='%23A68A4B' fill-opacity='0.28'><circle cx='0' cy='0' r='1.4'/><circle cx='60' cy='0' r='1.4'/><circle cx='0' cy='60' r='1.4'/><circle cx='60' cy='60' r='1.4'/><circle cx='30.0' cy='30.0' r='1.4'/></g></svg>");background-size:60px 60px;opacity:.85;-webkit-mask-image:linear-gradient(90deg,#000,rgba(0,0,0,.25) 30%,rgba(0,0,0,.25) 70%,#000);mask-image:linear-gradient(90deg,#000,rgba(0,0,0,.25) 30%,rgba(0,0,0,.25) 70%,#000)}
+
+/* footer links: two distinct columns split by a hairline */
+footer .footer-nav-row{display:grid!important;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,auto);grid-auto-flow:column;column-gap:2.4rem!important;row-gap:.7rem!important;justify-content:center;max-width:400px;margin-left:auto!important;margin-right:auto!important;background:linear-gradient(rgba(201,169,98,.45),rgba(201,169,98,.45)) center/1px 100% no-repeat}
+footer .footer-nav-row a:nth-child(-n+3){text-align:right;justify-self:end}
+footer .footer-nav-row a:nth-child(n+4){text-align:left;justify-self:start}
