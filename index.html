@@ -335,23 +335,21 @@ if(slides.length>1)setInterval(()=>{goToSlide((currentSlide+1)%slides.length)},1
 (function(){
   var host=document.getElementById('substack-feed');
   if(!host)return;
-  var FEED=host.getAttribute('data-feed')||'https://traditionandrenewal.substack.com/feed';
-  var URL='https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(FEED);
   function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function escAttr(s){return esc(s).replace(/"/g,'&quot;');}
-  function strip(h){var d=document.createElement('div');d.innerHTML=h;return (d.textContent||d.innerText||'').replace(/\s+/g,' ').trim();}
-  function decodeEnt(s){var t=document.createElement('textarea');t.innerHTML=String(s);return t.value.replace(/\s+/g,' ').trim();}
-  function card(item){
-    var date=new Date(item.pubDate);
+  function card(e){
+    var date=new Date((e.date||'')+'T12:00:00');
     var ds=isNaN(date)?'':date.toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});
-    var sn=strip(item.description||item.content||'');
+    var sn=String(e.excerpt||'');
     if(sn.length>180)sn=sn.slice(0,180).replace(/\s+\S*$/,'')+'\u2026';
-    var link=item.link||'#';
-    return '<article class="dispatch-card"><p class="d-date">'+esc(ds)+'</p><h3 class="d-title"><a href="'+escAttr(link)+'" target="_blank" rel="noopener">'+esc(decodeEnt(item.title||'Untitled'))+'</a></h3><p class="d-snippet">'+esc(sn)+'</p><a href="'+escAttr(link)+'" target="_blank" rel="noopener" class="d-readmore">Read &rarr;</a></article>';
+    var link=e.url||'https://traditionandrenewal.substack.com';
+    return '<article class="dispatch-card"><p class="d-date">'+esc(ds)+'</p><h3 class="d-title"><a href="'+escAttr(link)+'" target="_blank" rel="noopener">'+esc(e.title||'Untitled')+'</a></h3><p class="d-snippet">'+esc(sn)+'</p><a href="'+escAttr(link)+'" target="_blank" rel="noopener" class="d-readmore">Read &rarr;</a></article>';
   }
-  fetch(URL).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(data){
-    if(!data||data.status!=='ok'||!Array.isArray(data.items)||!data.items.length)throw 0;
-    host.innerHTML=data.items.slice(0,3).map(card).join('');
+  fetch('/tr-archive.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(data){
+    var items=(data&&data.entries||[]).filter(function(e){return /substack\.com/.test(e.url||'')||e.venue==='Tradition & Renewal';});
+    items.sort(function(a,b){return (b.date||'').localeCompare(a.date||'');});
+    if(!items.length)throw 0;
+    host.innerHTML=items.slice(0,3).map(card).join('');
   }).catch(function(){
     host.innerHTML='<div class="dispatch-card" style="grid-column:1/-1;text-align:center;min-height:0"><p class="d-snippet" style="margin:0">The latest essays live at <a href="https://traditionandrenewal.substack.com" style="color:var(--gold)">traditionandrenewal.substack.com</a>.</p></div>';
   });
