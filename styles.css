@@ -573,3 +573,16 @@ button.btn{font:inherit;cursor:pointer;line-height:inherit}
 /* reserve space above the fold without fixed dimensions */
 .hero .img-frame-circle{aspect-ratio:1/1}
 @media(max-width:700px){.logo-band-row img.logo-anthropic{max-height:18px !important;width:auto !important;max-width:170px !important}}
+/* Oct 22: endorsement cards a little larger */
+.endorsement-card{padding:1.5rem 1.6rem}
+.endorsement-card blockquote{font-size:1rem;line-height:1.65}
+.endorsement-card cite{font-size:.84rem}
+.endorsement-card .cite-title{font-size:.78rem}
+.endorser-grid{gap:1.5rem}
+.endorser-card{padding:1.85rem 1.5rem}
+.endorser-photo,.endorser-initial{width:92px;height:92px}
+.endorser-card.featured .endorser-photo{width:112px;height:112px}
+.endorser-card blockquote{font-size:.93rem;line-height:1.7}
+.endorser-card.featured blockquote{font-size:1rem}
+.endorser-card cite{font-size:.82rem}
+.endorser-card .cite-role{font-size:.74rem}
