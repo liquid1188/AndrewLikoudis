@@ -644,3 +644,8 @@ footer .footer-links-icons{display:grid!important;grid-template-columns:repeat(5
 footer .footer-icon-link{display:flex!important;flex-direction:column;align-items:center;justify-self:center;width:100%}
 @media(min-width:900px){footer .footer-links-icons{margin-left:0!important}}
 @media(min-width:900px){footer .footer-icon-link span:last-child{font-size:.76rem!important}}
+@media(min-width:900px){
+footer .footer-content{grid-template-columns:1fr 380px 1fr!important}
+footer .footer-nav-row{width:380px;max-width:none!important}
+}
+footer .footer-nav-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}
