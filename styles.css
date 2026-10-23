@@ -586,3 +586,6 @@ button.btn{font:inherit;cursor:pointer;line-height:inherit}
 .endorser-card.featured blockquote{font-size:1rem}
 .endorser-card cite{font-size:.82rem}
 .endorser-card .cite-role{font-size:.74rem}
+
+/* Oct 22: seal in the footer */
+.footer-seal-link{display:block;width:64px;margin:1.5rem auto 1rem;opacity:.95}.footer-seal-link:hover{opacity:1}.footer-seal{display:block;width:64px;height:64px}
