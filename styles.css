@@ -596,10 +596,38 @@ button.btn{font:inherit;cursor:pointer;line-height:inherit}
 .hero::before{-webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 45%,rgba(0,0,0,.25) 20%,#000 85%);mask-image:radial-gradient(ellipse 60% 70% at 50% 45%,rgba(0,0,0,.25) 20%,#000 85%)}
 
 
-footer::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><g fill='none' stroke='%23C9A962' stroke-opacity='0.09'><circle cx='0' cy='0' r='30.0'/><circle cx='60' cy='0' r='30.0'/><circle cx='0' cy='60' r='30.0'/><circle cx='60' cy='60' r='30.0'/><circle cx='30.0' cy='30.0' r='30.0'/></g><g stroke='%23C9A962' stroke-opacity='0.12' stroke-width='1.1'><path d='M26.8 0H33.2M30.0 -3.2V3.2'/><path d='M-3.2 30.0H3.2M0 26.8V33.2'/><path d='M56.8 30.0H63.2M60 26.8V33.2'/><path d='M26.8 60H33.2M30.0 56.8V63.2'/></g><g fill='%23C9A962' fill-opacity='0.12'><circle cx='0' cy='0' r='1.4'/><circle cx='60' cy='0' r='1.4'/><circle cx='0' cy='60' r='1.4'/><circle cx='60' cy='60' r='1.4'/><circle cx='30.0' cy='30.0' r='1.4'/></g></svg>");background-size:60px 60px}
+footer::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><g fill='none' stroke='%23C9A962' stroke-opacity='0.045'><circle cx='0' cy='0' r='30.0'/><circle cx='60' cy='0' r='30.0'/><circle cx='0' cy='60' r='30.0'/><circle cx='60' cy='60' r='30.0'/><circle cx='30.0' cy='30.0' r='30.0'/></g><g stroke='%23C9A962' stroke-opacity='0.06' stroke-width='1.1'><path d='M26.8 0H33.2M30.0 -3.2V3.2'/><path d='M-3.2 30.0H3.2M0 26.8V33.2'/><path d='M56.8 30.0H63.2M60 26.8V33.2'/><path d='M26.8 60H33.2M30.0 56.8V63.2'/></g><g fill='%23C9A962' fill-opacity='0.06'><circle cx='0' cy='0' r='1.4'/><circle cx='60' cy='0' r='1.4'/><circle cx='0' cy='60' r='1.4'/><circle cx='60' cy='60' r='1.4'/><circle cx='30.0' cy='30.0' r='1.4'/></g></svg>");background-size:60px 60px}
 /* footer text legible over the wallpaper */
 footer p:not(.footer-quote):not(.footer-attribution):not(.footer-copyright){color:rgba(255,255,255,.72)!important}
 footer a:not(.foundation-bar-btn):not([class*=btn]){color:rgba(255,255,255,.8)!important}
 footer span:not([class^=foundation]):not(.footer-ornament-glyph){color:rgba(255,255,255,.7)!important}
 footer .footer-quote{color:rgba(255,255,255,.9)!important}
 footer .footer-copyright{color:rgba(255,255,255,.6)!important}
+
+/* footer: horizontal layout, larger brighter text */
+@media(min-width:900px){
+footer .footer-content{display:grid;grid-template-columns:1fr 1.1fr 1.3fr;column-gap:3rem;row-gap:1.6rem;max-width:1120px;margin:0 auto;align-items:center;padding:0 1.5rem 1.5rem}
+footer .footer-quote-section{grid-column:1/-1;padding-bottom:.5rem!important}
+footer .footer-links-icons{grid-column:1;grid-row:2;margin:0!important;justify-content:flex-start!important;gap:1rem!important;flex-wrap:wrap}
+footer .footer-nav-row{grid-column:2;grid-row:2;margin:0!important;padding:0!important;border:0!important;display:grid!important;grid-template-columns:repeat(2,auto);justify-content:center;gap:.55rem 2rem!important}
+footer .footer-content>div:has(img[src*=kolbe]){grid-column:3;grid-row:2;margin:0!important;max-width:none!important;padding:0!important;border:0!important}
+footer .footer-content>p:not([class]){grid-column:1;grid-row:3;margin:0!important;text-align:left!important}
+footer .footer-copyright{grid-column:2;grid-row:3;margin:0!important;text-align:center}
+footer .footer-content>a[href*=buymeacoffee]{grid-column:3;grid-row:3;justify-self:end;margin:0!important}
+footer .footer-content::after{content:"";grid-column:1/-1;grid-row:3;align-self:start;border-top:1px solid rgba(255,255,255,.14);margin-top:-.2rem}
+footer .footer-content>p:not([class]),footer .footer-copyright,footer .footer-content>a[href*=buymeacoffee]{margin-top:1.2rem!important}
+footer .footer-icon{width:40px!important;height:40px!important}
+footer .footer-links-icons{gap:.7rem!important;flex-wrap:nowrap!important}
+footer .footer-icon-link{min-width:0!important}
+}
+footer .footer-nav-row a{font-size:.95rem!important;color:rgba(255,255,255,.88)!important}
+footer .footer-nav-row a:hover{color:var(--gold)!important}
+footer .footer-icon-link span:last-child{font-size:.8rem!important;color:rgba(255,255,255,.82)!important}
+footer .footer-content>p:not([class]){font-size:.85rem!important;color:rgba(255,255,255,.78)!important;line-height:1.6}
+footer .footer-content>p:not([class]) a{color:#fff!important}
+footer .footer-content>div:has(img[src*=kolbe]) p{font-size:.98rem!important;color:rgba(255,255,255,.85)!important;line-height:1.5!important}
+footer .footer-copyright{font-size:.85rem!important;color:rgba(255,255,255,.7)!important}
+footer .footer-content>a[href*=buymeacoffee]{font-size:.85rem!important;color:rgba(255,255,255,.85)!important}
+@media(min-width:900px){footer .footer-quote{font-size:1.65rem!important}}
+footer .footer-icon-link span:last-child{white-space:nowrap}
+@media(max-width:899px){footer .footer-nav-row{display:grid!important;grid-template-columns:repeat(3,auto);justify-content:center;gap:.6rem 1.6rem!important}footer .footer-nav-row a{white-space:nowrap}footer .footer-links-icons{gap:.6rem!important}footer .footer-icon-link span:last-child{font-size:.72rem!important}}
