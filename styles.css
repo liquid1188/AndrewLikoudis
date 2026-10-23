@@ -639,3 +639,8 @@ footer .footer-icon-link span:last-child{white-space:nowrap}
 footer .footer-nav-row{display:grid!important;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,auto);grid-auto-flow:column;column-gap:2.4rem!important;row-gap:.7rem!important;justify-content:center;max-width:400px;margin-left:auto!important;margin-right:auto!important;background:linear-gradient(rgba(201,169,98,.45),rgba(201,169,98,.45)) center/1px 100% no-repeat}
 footer .footer-nav-row a:nth-child(-n+3){text-align:right;justify-self:end}
 footer .footer-nav-row a:nth-child(n+4){text-align:left;justify-self:start}
+/* social icons: equal cells so the icons sit evenly regardless of label length */
+footer .footer-links-icons{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr));gap:0!important;width:100%;max-width:400px;margin-left:auto!important;margin-right:auto!important}
+footer .footer-icon-link{display:flex!important;flex-direction:column;align-items:center;justify-self:center;width:100%}
+@media(min-width:900px){footer .footer-links-icons{margin-left:0!important}}
+@media(min-width:900px){footer .footer-icon-link span:last-child{font-size:.76rem!important}}
