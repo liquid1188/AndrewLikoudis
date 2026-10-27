@@ -662,3 +662,12 @@ footer .footer-content{grid-template-columns:minmax(0,1fr) max-content minmax(0,
 footer .footer-nav-row{max-width:none!important;width:max-content!important;column-gap:2rem!important}
 footer .footer-links-icons{max-width:340px!important}
 }
+.book-filter{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin:0 auto 2rem}
+.bf-btn{font-family:'Lato',sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.55rem 1.1rem;border:1px solid var(--gold-dark,#a8873e);background:transparent;color:var(--burgundy,#722f37);border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+.bf-btn:hover{background:rgba(201,169,98,.15)}
+.bf-btn.is-on{background:var(--burgundy,#722f37);border-color:var(--burgundy,#722f37);color:#fff}
+.bf-btn:focus-visible{outline:2px solid var(--gold,#C9A962);outline-offset:2px}
+@media(min-width:701px){.nav-dd:focus-within .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:2000;background:var(--burgundy,#722f37);color:#fff;padding:.6rem 1rem;font-family:'Lato',sans-serif;font-size:.85rem;border-radius:0 0 6px 0}
+.skip-link:focus{left:0}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

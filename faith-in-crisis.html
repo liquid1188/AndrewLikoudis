@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faith in Crisis — Andrew Likoudis</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=1023i">
+    <link rel="stylesheet" href="styles.css?v=1027a">
     <link rel="canonical" href="https://andrewlikoudis.com/faith-in-crisis" />
     <meta name="google-site-verification" content="" />
     <script type="application/ld+json">
@@ -51,8 +51,8 @@
 {"@context":"https://schema.org","@type":"Person","name":"Andrew Likoudis","url":"https://andrewlikoudis.com","jobTitle":"Catholic Scholar &amp; Consultant","description":"Founder of the Likoudis Legacy Foundation. Editor of Faith in Crisis. MA Catholic Studies, Franciscan University.","worksFor":{"@type":"Organization","name":"Likoudis Legacy Foundation","url":"https://likoudislegacy.com"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Franciscan University of Steubenville"},{"@type":"CollegeOrUniversity","name":"Towson University"}],"knowsAbout":["Catholic theology","Ecumenism","Catholic-Orthodox relations","Editorial management","Ecclesiology"],"sameAs":["https://www.linkedin.com/in/andrewlikoudis","https://traditionandrenewal.substack.com"]}
 </script>
 <script>(function(l){if(l.search[1]==='/'){var d=l.search.slice(1).split('&').map(function(x){return x.replace(/~and~/g,'&')}).join('?');history.replaceState(null,null,l.pathname.slice(0,-1)+d+l.hash)}}(window.location))</script>
-</head><body><script>history.pushState=function(){};history.replaceState=function(){};</script>
-    <nav><div class="nav-container"><a href="/" class="nav-logo"  style="display:flex;align-items:center;gap:.5rem"><img decoding="async" loading="lazy" src="logo-seal.svg?v=3" alt="" aria-hidden="true" style="height:34px;width:34px;flex-shrink:0"><span>Andrew Likoudis</span></a><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div><ul class="nav-links" id="nav-menu"><li class="nav-dd"><a href="/about"  id="nav-about">About <span class="dd-caret">&#9662;</span></a><ul class="dd-menu"><li><a href="/about"  id="nav-about-page">About</a></li><li><a href="/endorsements"  id="nav-endorsements">Endorsements</a></li><li><a href="/gallery"  id="nav-gallery">Gallery</a></li></ul></li><li class="nav-dd"><a href="/books"  id="nav-pub">Publications <span class="dd-caret">&#9662;</span></a><ul class="dd-menu"><li><a href="/books"  id="nav-books">Books</a></li><li><a href="/writing"  id="nav-writing">Articles</a></li></ul></li><li><a href="/speaking"  id="nav-speaking">Speaking</a></li><li><a href="/work-with-me" class="wwm-cta"  id="nav-work-with-me">Work With Me</a></li></ul></div></nav>
+</head><body><a class="skip-link" href="#main">Skip to main content</a><script>history.pushState=function(){};history.replaceState=function(){};</script>
+    <nav><div class="nav-container"><a href="/" class="nav-logo"  style="display:flex;align-items:center;gap:.5rem"><img decoding="async" loading="lazy" src="logo-seal.svg?v=3" alt="" aria-hidden="true" style="height:34px;width:34px;flex-shrink:0"><span>Andrew Likoudis</span></a><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div><ul class="nav-links" id="nav-menu"><li class="nav-dd"><a href="/about"  id="nav-about">About <span class="dd-caret">&#9662;</span></a><ul class="dd-menu"><li><a href="/about"  id="nav-about-page">About</a></li><li><a href="/endorsements"  id="nav-endorsements">Endorsements</a></li><li><a href="/gallery"  id="nav-gallery">Gallery</a></li></ul></li><li class="nav-dd"><a href="/books"  id="nav-pub">Publications <span class="dd-caret">&#9662;</span></a><ul class="dd-menu"><li><a href="/books"  id="nav-books">Books</a></li><li><a href="/writing"  id="nav-writing">Articles</a></li></ul></li><li><a href="/speaking"  id="nav-speaking">Speaking</a></li><li><a href="/work-with-me" class="wwm-cta"  id="nav-work-with-me">Work With Me</a></li></ul></div></nav><span id="main" tabindex="-1"></span>
 
     <!-- HOME -->
     <div id="page-book" class="page active">
@@ -507,12 +507,12 @@ function requestTalk(theme){
   var sel = document.querySelector('select[name="engagement_type"]');
   if (sel){
     for (var i=0; i<sel.options.length; i++){
-      if (sel.options[i].text === 'Speaking / Keynote'){ sel.selectedIndex = i; break; }
+      if (sel.options[i].text === 'Speaking / Keynote'){ sel.selectedIndex = i; sel.dispatchEvent(new Event('change')); break; }
     }
   }
   var desc = document.querySelector('textarea[name="project_description"]');
   if (desc && !desc.value.trim()){
-    desc.value = 'Interested in the talk: "' + decodedTheme + '". \n\nEvent / venue: \nAudience: \nDate(s) under consideration: ';
+    desc.value = 'Interested in the talk: "' + decodedTheme + '".\n\n';
   }
   var target = document.getElementById('inquiry');
   if (target) target.scrollIntoView({behavior:'smooth'});
