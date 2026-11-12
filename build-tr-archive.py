@@ -9,10 +9,12 @@ Substack's RSS feed only exposes the 20 most recent posts, so anything older
 disappears from the feed permanently. This keeps a durable, version-controlled
 copy. Run daily by .github/workflows/tr-archive.yml.
 """
-import json, re, html, sys, urllib.request, urllib.error
+import json, re, html, sys, urllib.request, urllib.error, urllib.parse
 from datetime import datetime, timezone
 
-API = "https://traditionandrenewal.substack.com/api/v1/archive?sort=new&limit=50&offset="
+API = "https://traditionandrenewal.substack.com/api/v1/archive?sort=new&limit=50"
+# Nov 2026: Substack dropped offset paging (offset is now rejected with a 400)
+# and wraps results as {"posts": [...], "nextCursor": "..."}; page with &cursor=.
 PATH = "tr-archive.json"
 
 HEADERS = {
@@ -45,15 +47,18 @@ def clean(s, n=280):
     return (s[:n].rsplit(" ", 1)[0] + "\u2026") if len(s) > n else s
 
 def main():
-    posts, offset = [], 0
+    posts, cursor, pages = [], None, 0
     try:
         while True:
-            batch = json.loads(fetch(API + str(offset)))
-            if not batch:
-                break
+            url = API + ("&cursor=" + urllib.parse.quote(cursor) if cursor else "")
+            data = json.loads(fetch(url))
+            if isinstance(data, list):          # older response shape
+                batch, cursor = data, None
+            else:
+                batch, cursor = data.get("posts") or [], data.get("nextCursor")
             posts += batch
-            offset += len(batch)   # Substack may return fewer than the limit per page
-            if offset > 2000:
+            pages += 1
+            if not batch or not cursor or pages > 60:
                 break
     except Exception as e:
         print(f"could not reach Substack ({e}); archive left as is")
